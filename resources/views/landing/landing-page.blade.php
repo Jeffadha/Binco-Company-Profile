@@ -54,7 +54,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
         <div id="carousel-track" class="flex w-full h-full transition-transform duration-700 ease-out">
             <div class="flex-shrink-0 w-full h-full relative">
                 <div class="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-gray-900/40 z-10"></div>
-                <img src="{{ asset('images/img1.jpg') }}" class="w-full h-full object-cover" alt="Slide 1"
+                <img src="{{ asset('images/hero1.jpg') }}" class="w-full h-full object-cover" alt="Slide 1"
                     loading="lazy">
             </div>
             <div class="flex-shrink-0 w-full h-full relative">
@@ -85,11 +85,12 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
             <!-- Subtle underline -->
             <div class="w-24 h-1 bg-emerald-500 rounded-full mb-6 mx-auto"></div>
 
-            {{-- <p class="mt-4 max-w-3xl text-xl text-gray-200 font-light leading-relaxed">
-                PT Binco Indofarm — <span class="font-semibold text-emerald-300">anak perusahaan BINCO NUSANTARA</span>
-                — menghadirkan
+
+            <p class="mt-4 max-w-3xl text-xl text-gray-200 font-light leading-relaxed">
+                PT Binco Ran Indofarm — <span class="font-semibold text-emerald-300">anak perusahaan BINCO
+                    NUSANTARA</span> — menghadirkan
                 produk pertanian premium dengan standar tertinggi, didukung R&D mutakhir.
-            </p> --}}
+            </p>
 
             <p class="mt-4 max-w-3xl sm:text-xl text-xl text-gray-200 leading-relaxed font-bold uppercase">
                 PT Binco RAN Indofarm
@@ -282,7 +283,8 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
             style="background-image: url('data:image/svg+xml,%3Csvg width=\" 20\" height=\"20\" viewBox=\"0 0 20 20\"
             xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%2334d399\" fill-opacity=\"0.4\"
             fill-rule=\"evenodd\"%3E%3Ccircle cx=\"3\" cy=\"3\" r=\"3\"/%3E%3Ccircle cx=\"13\" cy=\"13\"
-            r=\"3\"/%3E%3C/g%3E%3C/svg%3E');"></div>
+            r=\"3\"/%3E%3C/g%3E%3C/svg%3E');">
+        </div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -365,8 +367,8 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                     </div>
                     <div
                         class="relative rounded-2xl overflow-hidden shadow-xl z-10 transform hover:-translate-y-2 transition-transform duration-500 border border-gray-200 dark:border-gray-700">
-                        <img src="{{ $whyImg }}" alt="Kenapa memilih kami" class="w-full h-96 object-cover"
-                            loading="lazy">
+                        <img src="{{ asset('/images/cocopeat_20250201_110118_0000.jpg') }}" alt="Kenapa memilih kami"
+                            class="w-full h-96 object-cover" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
 
                         <!-- Floating Badge -->
@@ -726,74 +728,6 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
 </section>
 
 
-<div id="featured-products" class="products-section py-20 bg-white dark:bg-gray-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <div
-                class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-600 text-white mb-4 shadow-lg">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                </svg>
-            </div>
-            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Produk <span
-                    class="text-emerald-600">Unggulan Kami</span></h2>
-            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Temukan solusi agribisnis terbaik kami yang dirancang untuk meningkatkan produktivitas dan hasil panen
-                Anda
-            </p>
-            <div class="w-24 h-1 bg-emerald-500 rounded-full mx-auto mt-6"></div>
-        </div>
-
-        <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            @foreach ($products as $product)
-            <div
-                class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-
-                <div class="relative overflow-hidden h-64">
-                    {{-- Ganti 'image_url' dengan nama kolom gambar Anda --}}
-                    <img src="{{ $product->image_url ?? 'https://picsum.photos/400/300' }}" alt="{{ $product->name }}"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        loading="lazy">
-                </div>
-
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 truncate"
-                        title="{{ $product->name }}">
-                        {{ $product->name }}
-                    </h3>
-
-                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed line-clamp-3">
-                        {{-- Ganti 'description' dengan nama kolom deskripsi Anda --}}
-                        {{ $product->description ?? 'Deskripsi singkat produk akan tampil di sini.' }}
-                    </p>
-
-                </div>
-            </div>
-            @endforeach
-
-        </div>
-
-    </div>
-
-    <div class="mt-16 text-center">
-        <a href="{{ route('product') }}"
-            class="group inline-flex items-center px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-emerald-500/30">
-            <span class="font-semibold tracking-wide">Lihat Produk</span>
-            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
-                </path>
-            </svg>
-        </a>
-    </div>
-
-
-</div>
-
-
-
 <div class="w-full bg-white py-12 dark:bg-gray-950">
     <div id="multi-slide" data-carousel='{
            "loadingClasses": "opacity-0",
@@ -834,55 +768,55 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div class="carousel-slide h-full">
                     <div
                         class="relative h-full bg-white border border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group">
-                        <img src="{{ asset('/images/carousel-section-2/img2.jpg') }}" alt="Slide 2"
+                        <img src="{{ asset('/images/produk_unggulan/cocopeat3.png') }}" alt="Slide 2"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
-                            class="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
-                            <!-- <span class="self-center text-3xl font-bold text-white">Second slide</span> -->
+                            class="absolute inset-0 bg-black bg-opacity-0 flex items-end justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
+                            <span class="text-3xl font-bold text-slate-600">Cocopeat</span>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-slide h-full">
                     <div
                         class="relative h-full bg-white border border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group">
-                        <img src="{{ asset('/images/carousel-section-2/img3.jpg') }}" alt="Slide 3"
+                        <img src="{{ asset('/images/produk_unggulan/cocopeat3.png') }}" alt="Slide 3"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
-                            class="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
-                            <!-- <span class="self-center text-3xl font-bold text-white">Third slide</span> -->
+                            class="absolute inset-0 bg-black bg-opacity-0 flex items-end justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
+                            <span class="text-3xl font-bold text-slate-600">Cocopeat</span>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-slide h-full">
                     <div
                         class="relative h-full bg-white border border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group">
-                        <img src="{{ asset('/images/carousel-section-2/img4.jpg') }}" alt="Slide 4"
+                        <img src="{{ asset('/images/produk_unggulan/cocopeat3.png') }}" alt="Slide 4"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
-                            class="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
-                            <!-- <span class="self-center text-3xl font-bold text-white">Fourth slide</span> -->
+                            class="absolute inset-0 bg-black bg-opacity-0 flex items-end justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
+                            <span class="text-3xl font-bold text-slate-600">Cocopeat</span>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-slide h-full">
                     <div
                         class="relative h-full bg-white border border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group">
-                        <img src="{{ asset('/images/carousel-section-2/img5.jpg') }}" alt="Slide 5"
+                        <img src="{{ asset('/images/produk_unggulan/cocopeat3.png') }}" alt="Slide 5"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
-                            class="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
-                            <!-- <span class="self-center text-3xl font-bold text-white">Fifth slide</span> -->
+                            class="absolute inset-0 bg-black bg-opacity-0 flex items-end justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
+                            <span class="text-3xl font-bold text-slate-600">Cocopeat</span>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-slide h-full">
                     <div
                         class="relative h-full bg-white border border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group">
-                        <img src="{{ asset('/images/carousel-section-2/img6.jpg') }}" alt="Slide 6"
+                        <img src="{{ asset('/images/produk_unggulan/cocopeat3.png') }}" alt="Slide 6"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
-                            class="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
-                            <!-- <span class="self-center text-3xl font-bold text-white">Sixth slide</span> -->
+                            class="absolute inset-0 bg-black bg-opacity-0 flex items-end justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
+                            <span class="text-3xl font-bold text-slate-600">Cocopeat</span>
                         </div>
                     </div>
                 </div>
@@ -905,8 +839,19 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
             <span class="sr-only">Next</span>
         </button>
     </div>
-</div>
 
+    <div class="mt-16 text-center">
+        <a href="{{ route('product') }}"
+            class="group inline-flex items-center px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-emerald-500/30">
+            <span class="font-semibold tracking-wide">Lihat Produk</span>
+            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
+            </svg>
+        </a>
+    </div>
+</div>
 
 
 <section id="testimoni" class="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
@@ -1109,140 +1054,508 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
 
 
 
-<section id="faq" class="py-20 bg-white dark:bg-gray-900 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
+<!-- Premium FAQ Section -->
+<section id="faq" class="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute -top-20 -right-20 w-40 h-40 bg-emerald-100 dark:bg-emerald-900/20 rounded-full blur-xl"></div>
+    <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-amber-100 dark:bg-amber-900/20 rounded-full blur-xl"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Section Header -->
         <div class="text-center mb-16">
             <div
                 class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-600 text-white mb-4 shadow-lg">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                    </path>
                 </svg>
             </div>
             <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Pertanyaan <span
-                    class="text-emerald-600">Umum (FAQ)</span></h2>
+                    class="text-emerald-600">Yang Sering Diajukan</span></h2>
             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Temukan jawaban cepat untuk pertanyaan umum tentang produk, layanan, dan inovasi kami.
+                Temukan jawaban untuk pertanyaan umum seputar produk, layanan, dan kerjasama dengan PT Binco Ran
+                Indofarm
             </p>
             <div class="w-24 h-1 bg-emerald-500 rounded-full mx-auto mt-6"></div>
         </div>
 
-        <div class="max-w-3xl mx-auto space-y-4">
-
-            <div x-data="{ isOpen: false }"
-                class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-md">
-                <button @click="isOpen = !isOpen" class="w-full flex justify-between items-center p-6 text-left">
-                    <span class="text-lg font-semibold text-gray-900 dark:text-white">
-                        1. Apa itu Cocopeat dan apa saja jenisnya?
-                    </span>
-                    <svg :class="{ 'rotate-180': isOpen }"
-                        class="w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
+        <!-- FAQ Accordion -->
+        <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div
+                class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden">
+                <button
+                    class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl">
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Apa itu PT Binco Ran Indofarm dan
+                        apa fokus bisnisnya?</span>
+                    <svg class="w-6 h-6 text-emerald-600 transform group-[.active]:rotate-180 transition-transform duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-
-                <div x-show="isOpen" x-collapse
-                    class="px-6 pt-0 pb-6 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
-                    <p>
-                        <strong>Cocopeat</strong> adalah serbuk halus dari olahan serabut kelapa yang digunakan sebagai
-                        media tanam pengganti tanah. Kami memproduksi dua jenis utama:
-                        <br><br>
-                        - <strong>Cocopeat Block (Press 5 Kg):</strong> Tersedia dalam Low EC dan High EC, ideal untuk
-                        ekspor karena mudah disimpan.
-                        <br>
-                        - <strong>Cocopeat Loose (Bagged):</strong> Produk siap pakai yang ideal untuk hidroponik,
-                        tanaman hias, dan nursery.
-                    </p>
+                <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            PT Binco Ran Indofarm adalah perusahaan agribisnis modern yang berfokus pada pengolahan
+                            sabut kelapa dan penyediaan media tanam alami untuk mendukung pertanian berkelanjutan.
+                            Dengan visi "Smart Agriculture and Sustainable Coconut Innovation", kami mengembangkan
+                            berbagai produk unggulan berbasis serabut kelapa seperti cocopeat, cocopot, dan cocorope.
+                        </p>
+                        <p class="mt-3 text-gray-600 dark:text-gray-300">
+                            Kami juga memiliki komitmen kuat terhadap ekonomi hijau dengan mengubah limbah kelapa
+                            menjadi produk bernilai tinggi, didukung fasilitas produksi modern, sistem greenhouse
+                            pintar, dan program wisata edukatif.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <div x-data="{ isOpen: false }"
-                class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-md">
-                <button @click="isOpen = !isOpen" class="w-full flex justify-between items-center p-6 text-left">
-                    <span class="text-lg font-semibold text-gray-900 dark:text-white">
-                        2. Apa keunggulan menggunakan Cocopot (Pot Organik)?
-                    </span>
-                    <svg :class="{ 'rotate-180': isOpen }"
-                        class="w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
+            <!-- FAQ Item 2 -->
+            <div
+                class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden">
+                <button
+                    class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl">
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Apa perbedaan Cocopeat Block dan
+                        Cocopeat Loose yang Anda produksi?</span>
+                    <svg class="w-6 h-6 text-emerald-600 transform group-[.active]:rotate-180 transition-transform duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-                <div x-show="isOpen" x-collapse
-                    class="px-6 pt-0 pb-6 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
-                    <p>
-                        Cocopot adalah pot alami pengganti pot plastik. Keunggulan utamanya adalah:
-                        <br><br>
-                        - <strong>Ramah Lingkungan:</strong> Sepenuhnya biodegradable dan tidak mencemari tanah.
-                        <br>
-                        - <strong>Memperkuat Akar:</strong> Pot ini memungkinkan akar menembus dinding pot, sehingga
-                        sistem akar lebih kuat dan sehat saat dipindahkan.
-                        <br>
-                        - <strong>Estetika:</strong> Memberikan tampilan yang alami dan menambah nilai estetika tanaman
-                        Anda.
-                    </p>
+                <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Kami memproduksi dua jenis cocopeat dengan karakteristik dan kegunaan yang berbeda:
+                        </p>
+
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-emerald-50 dark:bg-emerald-900/20 rounded-lg p-4">
+                                <h4 class="font-bold text-emerald-700 dark:text-emerald-400 mb-2">Cocopeat Block (Press
+                                    Block 5 Kg)</h4>
+                                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                                    <li class="flex items-start">
+                                        <svg class="w-4 h-4 text-emerald-500 mt-0.5 mr-2 flex-shrink-0"
+                                            fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Tersedia dalam varian Low EC dan High EC</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-4 h-4 text-emerald-500 mt-0.5 mr-2 flex-shrink-0"
+                                            fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Mudah disimpan dan dikembangkan kembali</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-4 h-4 text-emerald-500 mt-0.5 mr-2 flex-shrink-0"
+                                            fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Cocok untuk ekspor dan distribusi jarak jauh</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-4">
+                                <h4 class="font-bold text-amber-700 dark:text-amber-400 mb-2">Cocopeat Loose (Bagged)
+                                </h4>
+                                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                                    <li class="flex items-start">
+                                        <svg class="w-4 h-4 text-amber-500 mt-0.5 mr-2 flex-shrink-0"
+                                            fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Siap pakai tanpa perlu pengembangan</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-4 h-4 text-amber-500 mt-0.5 mr-2 flex-shrink-0"
+                                            fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Ideal untuk pertanian hidroponik dan tanaman hias</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-4 h-4 text-amber-500 mt-0.5 mr-2 flex-shrink-0"
+                                            fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Praktis untuk nursery dan penggunaan langsung</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div x-data="{ isOpen: false }"
-                class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-md">
-                <button @click="isOpen = !isOpen" class="w-full flex justify-between items-center p-6 text-left">
-                    <span class="text-lg font-semibold text-gray-900 dark:text-white">
-                        3. Apa itu Greenhouse Smart Plant?
-                    </span>
-                    <svg :class="{ 'rotate-180': isOpen }"
-                        class="w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
+            <!-- FAQ Item 3 -->
+            <div
+                class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden">
+                <button
+                    class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl">
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Apa keunggulan produk Cocopeat
+                        dibanding media tanam lainnya?</span>
+                    <svg class="w-6 h-6 text-emerald-600 transform group-[.active]:rotate-180 transition-transform duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-                <div x-show="isOpen" x-collapse
-                    class="px-6 pt-0 pb-6 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
-                    <p>
-                        <strong>Greenhouse Smart Plant</strong> adalah inovasi kami dalam pertanian modern. Sistem ini
-                        menggunakan teknologi canggih seperti:
-                        <br><br>
-                        - <strong>Fertigasi Otomatis:</strong> Pemberian air dan nutrisi (pupuk) secara otomatis dan
-                        terjadwal.
-                        <br>
-                        - <strong>Sensor Lingkungan Digital:</strong> Sensor untuk memonitor kelembaban, suhu, dan
-                        intensitas cahaya secara *real-time* untuk memastikan kondisi tanam yang optimal.
-                    </p>
+                <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Cocopeat memiliki beberapa keunggulan utama dibanding media tanam konvensional:
+                        </p>
+                        <ul class="mt-3 space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-emerald-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span><strong>Daya serap air tinggi</strong> - Dapat menyerap air hingga 8-9 kali
+                                    beratnya dan melepaskannya secara perlahan</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-emerald-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span><strong>100% organik & ramah lingkungan</strong> - Terbuat dari bahan alami dan
+                                    biodegradable</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-emerald-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span><strong>pH netral dan stabil</strong> - Cocok untuk semua jenis tanaman tanpa
+                                    perlu penyesuaian pH</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-emerald-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span><strong>Steril dan bebas patogen</strong> - Tidak mengandung biji gulma, bakteri,
+                                    atau jamur berbahaya</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-emerald-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span><strong>Sirkulasi udara optimal</strong> - Memperkuat sistem perakaran
+                                    tanaman</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div x-data="{ isOpen: false }"
-                class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-md">
-                <button @click="isOpen = !isOpen" class="w-full flex justify-between items-center p-6 text-left">
-                    <span class="text-lg font-semibold text-gray-900 dark:text-white">
-                        4. Siapa yang bisa mengikuti Wisata Edukasi Petik Melon?
-                    </span>
-                    <svg :class="{ 'rotate-180': isOpen }"
-                        class="w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
+            <!-- FAQ Item 4 -->
+            <div
+                class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden">
+                <button
+                    class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl">
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Apa itu Greenhouse Smart Plant dan
+                        Wisata Petik Melon?</span>
+                    <svg class="w-6 h-6 text-emerald-600 transform group-[.active]:rotate-180 transition-transform duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-                <div x-show="isOpen" x-collapse
-                    class="px-6 pt-0 pb-6 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
-                    <p>
-                        Program ini terbuka untuk <strong>masyarakat umum, pelajar, mahasiswa, maupun mitra
-                            usaha</strong>. Ini adalah sarana yang kami sediakan untuk rekreasi sekaligus edukasi, di
-                        mana pengunjung dapat memetik melon premium, belajar tentang sistem tanam modern, dan melihat
-                        penggunaan produk kami (seperti cocopeat) secara langsung.
-                    </p>
+                <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            <strong>Greenhouse Smart Plant</strong> adalah sistem pertanian modern yang kami kembangkan
+                            dengan teknologi fertigasi otomatis dan sensor lingkungan digital. Sistem ini memungkinkan
+                            pengelolaan tanaman yang presisi dan efisien.
+                        </p>
+
+                        <div class="mt-4">
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Program "Wisata Petik Melon &
+                                Edukasi Pertanian"</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="flex items-start p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-900 dark:text-white">Edukasi Pertanian Modern
+                                        </h5>
+                                        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Belajar sistem tanam
+                                            modern (fertigasi & smart plant)</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-900 dark:text-white">Pengalaman Langsung</h5>
+                                        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Memetik melon premium
+                                            langsung dari greenhouse</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mt-4 text-gray-600 dark:text-gray-300">
+                            Program ini terbuka untuk masyarakat umum, pelajar, dan mitra usaha sebagai sarana edukatif,
+                            rekreatif, dan inspiratif tentang pertanian modern.
+                        </p>
+                    </div>
                 </div>
             </div>
 
+            <!-- FAQ Item 5 -->
+            <div
+                class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden">
+                <button
+                    class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl">
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Bagaimana cara menjadi mitra atau
+                        distributor produk Binco Ran Indofarm?</span>
+                    <svg class="w-6 h-6 text-emerald-600 transform group-[.active]:rotate-180 transition-transform duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Kami membuka peluang kemitraan dengan berbagai pihak yang tertarik dengan produk dan visi
+                            kami:
+                        </p>
+
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Jenis Kemitraan</h4>
+                                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        Mitra ekspor & importir media tanam
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        Industri pertanian, nursery, dan urban farming
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        Hotel, café, dan pusat dekorasi hijau
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        Institusi pendidikan & lembaga riset
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Proses Kemitraan</h4>
+                                <ol class="text-sm text-gray-600 dark:text-gray-300 space-y-2 list-decimal list-inside">
+                                    <li>Kontak tim marketing kami via WhatsApp/email</li>
+                                    <li>Konsultasi kebutuhan dan potensi kerjasama</li>
+                                    <li>Pengajuan proposal kemitraan</li>
+                                    <li>Kunjungan dan presentasi (jika diperlukan)</li>
+                                    <li>Penandatanganan perjanjian kerjasama</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+                            <p class="text-sm text-gray-600 dark:text-gray-300">
+                                <strong>Informasi Kontak:</strong><br>
+                                WhatsApp/Telp: +62 898-5531-212<br>
+                                Email: bincoranindofarm@gmail.com<br>
+                                Alamat: Jl. Suruh, Kayuapak, Kec. Polokarto, Kab. Sukoharjo, Jawa Tengah 57555
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div
+                class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden">
+                <button
+                    class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl">
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Produk turunan apa saja yang
+                        dihasilkan dari pengolahan sabut kelapa?</span>
+                    <svg class="w-6 h-6 text-emerald-600 transform group-[.active]:rotate-180 transition-transform duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Selain produk utama (Cocopeat, Cocopot, Cocorope), kami juga memproduksi berbagai produk
+                            turunan bernilai tinggi dari sabut kelapa:
+                        </p>
+
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Produk Media Tanam &
+                                    Pertanian</h4>
+                                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        Cocomat (matras serabut kelapa)
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        Sekam bakar (media tanam tambahan)
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        Kohe (pupuk kandang fermentasi)
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Produk Rumah Tangga &
+                                    Industri</h4>
+                                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-amber-500 mr-2" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        Keset serabut kelapa
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-amber-500 mr-2" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        Sikat dan kuas cocobristle
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-amber-500 mr-2" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        Kemoceng teleskopik
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="mt-4 text-gray-600 dark:text-gray-300">
+                            Semua produk ini merupakan bagian dari komitmen kami untuk menghadirkan solusi ramah
+                            lingkungan dari hulu ke hilir dan mendukung circular economy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="mt-12 text-center">
+            <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                Masih ada pertanyaan lain? Jangan ragu untuk menghubungi kami
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/628985531212" target="_blank"
+                    class="inline-flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl border border-emerald-500/30">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.262-6.189-3.553-8.436" />
+                    </svg>
+                    Hubungi WhatsApp
+                </a>
+                <a href="mailto:bincoranindofarm@gmail.com"
+                    class="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-600">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    Kirim Email
+                </a>
+            </div>
         </div>
     </div>
 </section>
-
-
-
-
 
 @endsection
 
@@ -1376,7 +1689,40 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
         document.getElementById('testi-wrapper').addEventListener('mouseenter', () => clearInterval(testiAuto));
         document.getElementById('testi-wrapper').addEventListener('mouseleave', () => testiAuto = setInterval(() => { testiNext.click(); }, 8000));
 
-        // Add scroll animations
+        /* FAQ ACCORDION FUNCTIONALITY */
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function () {
+                const parent = this.parentElement;
+                const answer = this.nextElementSibling;
+
+                // Toggle active class
+                parent.classList.toggle('active');
+
+                // Toggle answer visibility
+                if (parent.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = '0';
+                }
+
+                // Close other open FAQs
+                faqQuestions.forEach(otherQuestion => {
+                    if (otherQuestion !== this) {
+                        const otherParent = otherQuestion.parentElement;
+                        const otherAnswer = otherQuestion.nextElementSibling;
+
+                        if (otherParent.classList.contains('active')) {
+                            otherParent.classList.remove('active');
+                            otherAnswer.style.maxHeight = '0';
+                        }
+                    }
+                });
+            });
+        });
+
+        /* SCROLL ANIMATIONS */
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1442,6 +1788,11 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
     /* Dark mode transitions */
     * {
         transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* FAQ Accordion Transitions */
+    .faq-answer {
+        transition: max-height 0.3s ease-out;
     }
 </style>
 @endpush
