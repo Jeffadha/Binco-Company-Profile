@@ -743,11 +743,10 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                         d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
                 </svg>
             </div>
-            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Produk <span
-                    class="text-emerald-600">Unggulan Kami</span></h2>
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Katalog <span
+                    class="text-emerald-600">Produk</span></h2>
             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Temukan solusi agribisnis terbaik kami yang dirancang untuk meningkatkan produktivitas dan hasil panen
-                Anda
+                Lihat koleksi lengkap produk unggulan kami
             </p>
             <div class="w-24 h-1 bg-emerald-500 rounded-full mx-auto mt-6"></div>
         </div>
@@ -756,7 +755,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
             <div class="carousel-body h-full space-x-4 opacity-0">
                 <div class="carousel-slide h-full">
                     <div
-                        class="relative h-full bg-white border border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group shadow-xl">
+                        class="relative h-full bg-white border-2 border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden group">
                         <img src="{{ asset('/images/produk_unggulan/cocopeat3.png') }}" alt="Slide 1"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
@@ -767,56 +766,56 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 </div>
                 <div class="carousel-slide h-full">
                     <div
-                        class="relative h-full bg-white border border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group">
-                        <img src="{{ asset('/images/produk_unggulan/cocopeat3.png') }}" alt="Slide 2"
+                        class="relative h-full bg-white border-2 border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group">
+                        <img src="{{ asset('/images/produk_unggulan/cocobristle.png') }}" alt="Slide 2"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 flex items-end justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
-                            <span class="text-3xl font-bold text-slate-600">Cocopeat</span>
+                            <span class="text-3xl font-bold text-slate-600">Cocobristle</span>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-slide h-full">
                     <div
-                        class="relative h-full bg-white border border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group">
-                        <img src="{{ asset('/images/produk_unggulan/cocopeat3.png') }}" alt="Slide 3"
+                        class="relative h-full bg-white border-2 border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden group">
+                        <img src="{{ asset('/images/produk_unggulan/Cocopot.png') }}" alt="Slide 3"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 flex items-end justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
-                            <span class="text-3xl font-bold text-slate-600">Cocopeat</span>
+                            <span class="text-3xl font-bold text-slate-600">Cocopot</span>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-slide h-full">
                     <div
-                        class="relative h-full bg-white border border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group">
-                        <img src="{{ asset('/images/produk_unggulan/cocopeat3.png') }}" alt="Slide 4"
+                        class="relative h-full bg-white border-2 border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden group">
+                        <img src="{{ asset('/images/produk_unggulan/Cocorope0.png') }}" alt="Slide 4"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 flex items-end justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
-                            <span class="text-3xl font-bold text-slate-600">Cocopeat</span>
+                            <span class="text-3xl font-bold text-slate-600">Cocorope</span>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-slide h-full">
                     <div
-                        class="relative h-full bg-white border border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group">
-                        <img src="{{ asset('/images/produk_unggulan/cocopeat3.png') }}" alt="Slide 5"
+                        class="relative h-full bg-white border-2 border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden group">
+                        <img src="{{ asset('/images/produk_unggulan/Cocopeat_Block.png') }}" alt="Slide 5"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 flex items-end justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
-                            <span class="text-3xl font-bold text-slate-600">Cocopeat</span>
+                            <span class="text-3xl font-bold text-slate-600">Cocopeat Block</span>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-slide h-full">
                     <div
-                        class="relative h-full bg-white border border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group">
-                        <img src="{{ asset('/images/produk_unggulan/cocopeat3.png') }}" alt="Slide 6"
+                        class="relative h-full bg-white border-2 border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden group">
+                        <img src="{{ asset('/images/produk_unggulan/Cocomat.png') }}" alt="Slide 6"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 flex items-end justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
-                            <span class="text-3xl font-bold text-slate-600">Cocopeat</span>
+                            <span class="text-3xl font-bold text-slate-600">Cocomat</span>
                         </div>
                     </div>
                 </div>
@@ -843,7 +842,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
     <div class="mt-16 text-center">
         <a href="{{ route('product') }}"
             class="group inline-flex items-center px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-emerald-500/30">
-            <span class="font-semibold tracking-wide">Lihat Produk</span>
+            <span class="font-semibold tracking-wide">Lihat Semua Produk</span>
             <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
                 viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
@@ -997,56 +996,112 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
-                <img src="{{ $gal1Img }}" alt="g1"
+                <img src="{{ asset('/images/galeri/galeri (1).jpg') }}" alt="g1"
                     class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy">
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-4 text-white z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <h4 class="font-bold text-lg">Proses Produksi</h4>
-                    <p class="text-sm opacity-90">Teknologi modern untuk hasil terbaik</p>
-                </div>
-            </div>
-            <div
-                class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                </div>
-                <img src="{{ $gal2Img }}" alt="g2"
-                    class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy">
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-4 text-white z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <h4 class="font-bold text-lg">Quality Control</h4>
-                    <p class="text-sm opacity-90">Standar ketat untuk kualitas premium</p>
-                </div>
-            </div>
-            <div
-                class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                </div>
-                <img src="{{ $gal3Img }}" alt="g3"
-                    class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy">
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-4 text-white z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <h4 class="font-bold text-lg">Produk Jadi</h4>
-                    <p class="text-sm opacity-90">Siap untuk distribusi</p>
-                </div>
-            </div>
-            <div
-                class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                </div>
-                <img src="{{ $gal4Img }}" alt="g4"
-                    class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy">
-                <div
+                {{-- <div
                     class="absolute bottom-0 left-0 right-0 p-4 text-white z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                     <h4 class="font-bold text-lg">Tim Ahli</h4>
                     <p class="text-sm opacity-90">Profesional berpengalaman</p>
+                </div> --}}
+            </div>
+            <div
+                class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
+                <img src="{{ asset('/images/galeri/galeri (8).jpg') }}" alt="g2"
+                    class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy">
+                {{-- <div
+                    class="absolute bottom-0 left-0 right-0 p-4 text-white z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <h4 class="font-bold text-lg">Tim Ahli</h4>
+                    <p class="text-sm opacity-90">Profesional berpengalaman</p>
+                </div> --}}
+            </div>
+            <div
+                class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <img src="{{ asset('/images/galeri/galeri (9).jpg') }}" alt="g3"
+                    class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy">
+                {{-- <div
+                    class="absolute bottom-0 left-0 right-0 p-4 text-white z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <h4 class="font-bold text-lg">Tim Ahli</h4>
+                    <p class="text-sm opacity-90">Profesional berpengalaman</p>
+                </div> --}}
+            </div>
+            <div
+                class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <img src="{{ asset('/images/galeri/galeri (10).jpg') }}" alt="g4"
+                    class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy">
+                {{-- <div
+                    class="absolute bottom-0 left-0 right-0 p-4 text-white z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <h4 class="font-bold text-lg">Tim Ahli</h4>
+                    <p class="text-sm opacity-90">Profesional berpengalaman</p>
+                </div> --}}
+            </div>
+            <div
+                class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <img src="{{ asset('/images/galeri/galeri (11).jpg') }}" alt="g1"
+                    class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy">
+                {{-- <div
+                    class="absolute bottom-0 left-0 right-0 p-4 text-white z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <h4 class="font-bold text-lg">Tim Ahli</h4>
+                    <p class="text-sm opacity-90">Profesional berpengalaman</p>
+                </div> --}}
+            </div>
+            <div
+                class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <img src="{{ asset('/images/galeri/galeri (12).jpg') }}" alt="g2"
+                    class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy">
+                {{-- <div
+                    class="absolute bottom-0 left-0 right-0 p-4 text-white z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <h4 class="font-bold text-lg">Tim Ahli</h4>
+                    <p class="text-sm opacity-90">Profesional berpengalaman</p>
+                </div> --}}
+            </div>
+            <div
+                class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <img src="{{ asset('/images/galeri/galeri (13).jpg') }}" alt="g3"
+                    class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy">
+                {{-- <div
+                    class="absolute bottom-0 left-0 right-0 p-4 text-white z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <h4 class="font-bold text-lg">Tim Ahli</h4>
+                    <p class="text-sm opacity-90">Profesional berpengalaman</p>
+                </div> --}}
+            </div>
+            <div
+                class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <img src="{{ asset('/images/galeri/galeri (14).jpg') }}" alt="g4"
+                    class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy">
+                {{-- <div
+                    class="absolute bottom-0 left-0 right-0 p-4 text-white z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <h4 class="font-bold text-lg">Tim Ahli</h4>
+                    <p class="text-sm opacity-90">Profesional berpengalaman</p>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -1097,13 +1152,13 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 </button>
                 <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
                     <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
                             PT Binco Ran Indofarm adalah perusahaan agribisnis modern yang berfokus pada pengolahan
                             sabut kelapa dan penyediaan media tanam alami untuk mendukung pertanian berkelanjutan.
                             Dengan visi "Smart Agriculture and Sustainable Coconut Innovation", kami mengembangkan
                             berbagai produk unggulan berbasis serabut kelapa seperti cocopeat, cocopot, dan cocorope.
                         </p>
-                        <p class="mt-3 text-gray-600 dark:text-gray-300">
+                        <p class="mt-3 text-gray-600 dark:text-gray-300 text-justify">
                             Kami juga memiliki komitmen kuat terhadap ekonomi hijau dengan mengubah limbah kelapa
                             menjadi produk bernilai tinggi, didukung fasilitas produksi modern, sistem greenhouse
                             pintar, dan program wisata edukatif.
@@ -1290,7 +1345,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 </button>
                 <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
                     <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
                             <strong>Greenhouse Smart Plant</strong> adalah sistem pertanian modern yang kami kembangkan
                             dengan teknologi fertigasi otomatis dan sensor lingkungan digital. Sistem ini memungkinkan
                             pengelolaan tanaman yang presisi dan efisien.
