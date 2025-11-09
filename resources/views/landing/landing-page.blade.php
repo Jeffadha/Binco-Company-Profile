@@ -71,7 +71,7 @@
             <div class="w-24 h-1 bg-emerald-500 rounded-full mb-6 mx-auto"></div>
             
             <p class="mt-4 max-w-3xl text-xl text-gray-200 font-light leading-relaxed">
-                PT Binco Indofarm — <span class="font-semibold text-emerald-300">anak perusahaan BINCO NUSANTARA</span> — menghadirkan 
+                PT Binco Ran Indofarm — <span class="font-semibold text-emerald-300">anak perusahaan BINCO NUSANTARA</span> — menghadirkan 
                 produk pertanian premium dengan standar tertinggi, didukung R&D mutakhir.
             </p>
             

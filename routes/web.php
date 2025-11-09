@@ -25,6 +25,7 @@ Route::get('/search', function () {
 
 Route::get('/about', [CompanyProfileController::class, "aboutPage"])->name('about');
 Route::get('/blogs', [CompanyProfileController::class, "blogPage"])->name('blogs');
+Route::get('/blog/{slug}', [CompanyProfileController::class, 'showblog'])->name('blog.show');
 Route::get('/contact', [CompanyProfileController::class, "contactPage"])->name('contact');
 Route::get('/product', [ProductController::class, "productPage"])->name('product');
 
@@ -72,6 +73,8 @@ Route::middleware('isAdmin')->group(function () {
     //     Route::get('/', [OrderHistoryController::class, "history"])->name('admin.order-historis.index');
     //     Route::get('update-status/{id}/{status}', [OrderHistoryController::class, 'updateStatus'])->name('update-status');
     // });
+    //Posts Route
+    Route::resource('/admin/posts', \App\Http\Controllers\PostController::class)->names('admin.posts');
 });
 
 Route::post('/checkout/process', [UserCheckoutController::class, "process"])->name('checkout.process');
