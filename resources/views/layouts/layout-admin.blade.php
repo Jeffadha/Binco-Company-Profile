@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Admin Dashboard') - Store Admin</title>
-    @vite('resources/css/app.css')
-    @stack('styles')
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
+    @stack('styles')
+
     <style>
+        /* (Semua style custom Anda biarkan di sini, ini sudah benar) */
         body {
             min-height: 100vh;
             display: flex;
@@ -48,10 +50,9 @@
                 margin-left: 0;
             }
         }
-        
 
         main {
-            flex: 1; /* Membuat konten utama fleksibel agar footer tetap di bawah */
+            flex: 1;
         }
 
         ::-webkit-scrollbar {
@@ -93,7 +94,9 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     @stack('scripts')
+
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 

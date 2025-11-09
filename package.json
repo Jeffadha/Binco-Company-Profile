@@ -17,6 +17,7 @@
     "dependencies": {
         "@tailwindcss/forms": "^0.5.9",
         "alpinejs": "^3.14.3",
-        "flowbite": "^2.5.2"
+        "flowbite": "^2.5.2",
+        "flyonui": "^2.4.1"
     }
 }

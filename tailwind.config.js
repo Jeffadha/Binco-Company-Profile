@@ -1,4 +1,5 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
+import flyonui from "flyonui";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -18,6 +19,7 @@ export default {
         },
     },
     plugins: [
+        flyonui,
         require('flowbite/plugin'),
         require('@tailwindcss/forms')
     ],

@@ -1,21 +1,22 @@
-import './bootstrap';
-import './search';
-import 'flowbite';
-import ShoppingCart from './cart';
-import Alpine from 'alpinejs';
+import "./bootstrap";
+// import "bootstrap";
+import "./search";
+import "flowbite";
+import "flyonui/flyonui";
+import ShoppingCart from "./cart";
+import Alpine from "alpinejs";
 
 window.Alpine = Alpine;
 Alpine.start();
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     try {
         window.cart = new ShoppingCart();
-        console.log('Shopping cart Initialized');
+        console.log("Shopping cart Initialized");
     } catch (error) {
-        console.error('Shopping cart not initialized', error);
+        console.error("Shopping cart not initialized", error);
     }
 });
-
 
 // document.addEventListener('DOMContentLoaded', function () {
 //     const filterForm = document.getElementById('filter-form');
@@ -60,6 +61,3 @@ document.addEventListener('DOMContentLoaded', () => {
 //             });
 //     }
 // });
-
-
-

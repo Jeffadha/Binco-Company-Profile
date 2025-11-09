@@ -43,17 +43,19 @@
 
                 <div class="mt-4">
                     <p class="px-3 text-uppercase small fw-medium mb-2 text-secondary sidebar-text">Sales & Orders</p>
+
                     <a href="{{ route('admin.orders.index') }}"
-                        class="nav-link d-flex align-items-center gap-2 px-3 py-2 rounded-2 {{ request()->routeIs('admin.orders.*') ? 'active-nav' : 'text-secondary hover-nav' }}">
+                        class="nav-link d-flex align-items-center gap-2 px-3 py-2 rounded-2
+              {{ (request()->routeIs('admin.orders.*') && !request()->routeIs('admin.orders.history*')) ? 'active-nav' : 'text-secondary hover-nav' }}">
                         <i class="bi bi-cart-check-fill"></i>
                         <span class="sidebar-text">Orders</span>
                     </a>
-                    {{-- <a href="{{route('admin.order-historis.index')}}">
-                        <div class="nav-link d-flex align-items-center gap-2 px-3 py-2 rounded-2 {{ request()->routeIs('admin.order-historis.*') ? 'active-nav' : 'text-secondary hover-nav' }}">
-                            <i class="bi bi-clock-history"></i>
-                            <span class="sidebar-text">Order History</span>
-                        </div>
-                    </a> --}}
+
+                    <a href="{{ route('admin.orders.history') }}" class="nav-link d-flex align-items-center gap-2 px-3 py-2 rounded-2
+              {{ request()->routeIs('admin.orders.history*') ? 'active-nav' : 'text-secondary hover-nav' }}">
+                        <i class="bi bi-clock-history"></i>
+                        <span class="sidebar-text">Order History</span>
+                    </a>
                 </div>
 
                 <div class="mt-4">
@@ -93,7 +95,7 @@
                         </li>
                         <li>
                             <a class="dropdown-item text-danger" href="#"
-                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="bi bi-box-arrow-right me-2"></i>Logout
                             </a>
                         </li>
@@ -163,20 +165,20 @@
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const sidebar = document.getElementById('sidebar');
         const sidebarToggle = document.getElementById('sidebarToggle');
         const contentWrapper = document.getElementById('contentWrapper');
 
         // Handle mobile toggle
         if (sidebarToggle) {
-            sidebarToggle.addEventListener('click', function() {
+            sidebarToggle.addEventListener('click', function () {
                 sidebar.classList.toggle('show');
             });
         }
 
         // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             if (window.innerWidth < 992) {
                 const isClickInsideSidebar = sidebar.contains(event.target);
                 const isClickOnToggle = sidebarToggle && sidebarToggle.contains(event.target);
@@ -188,14 +190,14 @@
         });
 
         // Handle window resize
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
             if (window.innerWidth >= 992) {
                 sidebar.classList.remove('show');
             }
         });
 
         // Add desktop toggle functionality with keyboard shortcut
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Ctrl + B to toggle sidebar
             if (event.ctrlKey && event.key === 'b') {
                 event.preventDefault();

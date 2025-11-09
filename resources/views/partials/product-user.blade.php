@@ -5,7 +5,12 @@
         data-id="{{ $product->id }}" data-name="{{ $product->name }}" data-price="{{ $product->price }}"
         data-image="{{ $product->getPrimaryImage() }}" data-category="{{ $product->category->name }}">
 
-        <div class="aspect-w-1 aspect-h-1">
+        {{-- <div class="aspect-w-1 aspect-h-1">
+            <img src="{{ $product->getPrimaryImage() }}" alt="{{ $product->name }}"
+                class="w-full h-48 sm:h-72 object-cover rounded-t-lg" />
+        </div> --}}
+
+        <div class="aspect-w-1 aspect-h-1 cursor-pointer js-product-modal-trigger">
             <img src="{{ $product->getPrimaryImage() }}" alt="{{ $product->name }}"
                 class="w-full h-48 sm:h-72 object-cover rounded-t-lg" />
         </div>
@@ -13,7 +18,9 @@
         <div class="p-4 flex flex-col flex-1">
 
             <div class="flex-1">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2 min-h-[2.5rem]">{{
+                <h3
+                    class="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2 min-h-[2.5rem] cursor-pointer js-product-modal-trigger">
+                    {{
                     $product->name }}</h3>
                 {{-- <p class="mt-1 text-sm text-gray-500 dark:text-gray-400 line-clamp-2 min-h-[2.5rem]">{{
                     $product->description }}</p> --}}
@@ -61,3 +68,7 @@
     </nav>
 </div>
 @endif
+
+@include('partials.product-modal')
+
+@include('partials.product-modal-script')

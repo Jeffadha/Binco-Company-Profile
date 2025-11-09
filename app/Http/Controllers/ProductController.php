@@ -116,4 +116,27 @@ class ProductController extends Controller
 
         return view('landing.product-page', compact('categories', 'products'));
     }
+
+    public function showJson(Product $product)
+    {
+        $product->load('category');
+        $imagePaths = $product->getAllImages();
+
+        $allImages = collect($imagePaths)->filter()->map(function ($path) {
+
+            if (str_starts_with($path, 'data:image')) {
+                return $path;
+            }
+            return asset('storage/' . $path);
+        })->unique()->values();
+
+        return response()->json([
+            'id' => $product->id,
+            'name' => $product->name,
+            'price' => $product->getFormattedPriceAttribute(),
+            'description' => $product->description ?? 'Tidak ada deskripsi untuk produk ini.',
+            'category' => $product->category->name ?? 'Uncategorized',
+            'images' => $allImages,
+        ]);
+    }
 }

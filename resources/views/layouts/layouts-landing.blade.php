@@ -29,14 +29,10 @@
                 <div class="flex-shrink-0">
                     <a href="/" class="flex items-center">
                         <div
-                            class="h-10 w-10 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
+                            class="h-24 w-24 bg-gradient-to-r rounded-xl flex items-center justify-center">
+                            <img src="{{ asset('/images/logo/logo.PNG') }}" alt="">
                         </div>
-                        <span class="ml-3 text-xl font-bold text-gray-900 dark:text-white">Binco Indofarm</span>
+                        <!-- <span class="ml-3 text-xl font-bold text-gray-900 dark:text-white">Binco Indofarm</span> -->
                     </a>
                 </div>
 

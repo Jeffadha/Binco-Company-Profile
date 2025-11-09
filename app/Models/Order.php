@@ -116,4 +116,10 @@ class Order extends Model
 
         return $this;
     }
+
+    public function orderItems()
+    {
+        // Pastikan Anda memiliki model OrderItem
+        return $this->hasMany(OrderItem::class);
+    }
 }

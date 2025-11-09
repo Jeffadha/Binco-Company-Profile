@@ -80,7 +80,7 @@
         </div>
         <!-- Pagination Links -->
         <div class="mt-4">
-            {{ $products->links() }}
+            {{ $products->links('pagination::bootstrap-5') }}
         </div>
     </div>
 </div>

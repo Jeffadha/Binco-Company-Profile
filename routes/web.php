@@ -1,16 +1,16 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CompanyProfileController;
-use App\Http\Controllers\OrderHistoryController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\User\UserCheckoutController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderHistoryController;
+use App\Http\Controllers\CompanyProfileController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\User\UserLandingController;
-use App\Http\Controllers\UserController;
-
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User\UserCheckoutController;
 
 //Landing Page Routes
 Route::get('/', [UserLandingController::class, 'index'])->name('home');
@@ -38,9 +38,11 @@ Route::post('/logout', [AuthController::class, "logout"])->name('logout');
 
 
 Route::middleware('isAdmin')->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+    // Route::get('/admin/dashboard', function () { return view('admin.dashboard');})->name('admin.dashboard');
+
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])
+        ->name('admin.dashboard');
+
     //category
     Route::get('/admin/categories', [CategoryController::class, "index"])->name('admin.categories.index');
     Route::delete('/admin/categories/{category}', [CategoryController::class, "destroy"])->name('admin.categories.destroy');
@@ -67,12 +69,13 @@ Route::middleware('isAdmin')->group(function () {
         Route::patch('/{order}/status', [OrdersController::class, "updateStatus"])->name('admin.orders.updateStatus');
     });
 
-    //order histori
-    // Route::prefix('order-historis')->group(function () {
-    //     Route::get('/', [OrderHistoryController::class, "history"])->name('admin.order-historis.index');
-    //     Route::get('update-status/{id}/{status}', [OrderHistoryController::class, 'updateStatus'])->name('update-status');
-    // });
+    // order histori
+    Route::prefix('order-history')->group(function () {
+        Route::get('/', [OrderHistoryController::class, "history"])->name('admin.orders.history');
+        Route::get('update-status/{id}/{status}', [OrderHistoryController::class, 'updateStatus'])->name('admin.orders.update-status');
+    });
 });
 
 Route::post('/checkout/process', [UserCheckoutController::class, "process"])->name('checkout.process');
 Route::post('/payments/update-status', [UserCheckoutController::class, "updateStatus"])->name('payments.update-status');
+Route::get('/products/{product:id}', [ProductController::class, 'showJson'])->name('products.showJson');

@@ -1,9 +1,9 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-
     /* Original styles */
     .text-primary {
         @apply text-gray-800;

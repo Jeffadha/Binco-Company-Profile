@@ -15,7 +15,7 @@ class OrdersController extends Controller
             ->when($request->search, function ($query, $search) {
                 $query->where(function ($q) use ($search) {
                     $q->where('id', 'like', "%{$search}%")
-                      ->orWhere('order_code', 'like', "%{$search}%") 
+                      ->orWhere('order_code', 'like', "%{$search}%")
                       ->orWhereHas('user', function ($q) use ($search) {
                           $q->where('name', 'like', "%{$search}%")
                             ->orWhere('email', 'like', "%{$search}%");
@@ -29,7 +29,7 @@ class OrdersController extends Controller
                 $query->where('status', $status);
             })
             ->latest()
-            ->paginate(5)
+            ->paginate(25)
             ->withQueryString();
 
         return view('admin.order', compact('orders'));

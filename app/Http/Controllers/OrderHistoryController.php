@@ -20,10 +20,10 @@ class OrderHistoryController extends Controller
             })
             ->with(['user', 'orderItems.product'])
             ->latest()
-            ->paginate(10);
+            ->paginate(25);
         $orders->appends($request->all());
 
-        return view('admin.orders.history', compact('orders'));
+        return view('admin.orderHistory', compact('orders'));
     }
 
     /**
