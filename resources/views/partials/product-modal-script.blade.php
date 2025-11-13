@@ -32,7 +32,8 @@
                 // 1. Isi konten teks
                 modalProductName.textContent = product.name;
                 modalProductPrice.textContent = product.price;
-                modalProductDescription.textContent = product.description;
+                modalProductDescription.innerHTML = product.description.replace(/\n/g, '<br>');
+
 
                 // 2. Isi gambar utama
                 modalMainImage.src = product.images[0] || ''; // Gambar pertama sebagai gambar utama

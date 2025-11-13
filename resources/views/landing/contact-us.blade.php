@@ -1,6 +1,6 @@
 @extends('layouts.layouts-landing')
 
-@section('title', 'Contact Us')
+@section('title', __('messages.contact_title'))
 
 @section('content')
 
@@ -8,9 +8,9 @@
     <!-- Header Section -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
         <div class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Hubungi Kami</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">{{ __('messages.contact_title') }}</h1>
             <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Mari berkolaborasi untuk menciptakan solusi pertanian berkelanjutan
+                {{ __('messages.contact_subtitle') }}
             </p>
         </div>
 
@@ -19,7 +19,7 @@
             <!-- Contact Information -->
             <div class="space-y-8">
                 <div>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Informasi Kontak</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">{{ __('messages.contact_info_title') }}</h2>
                     
                     <!-- Contact Items -->
                     <div class="space-y-6">
@@ -31,10 +31,10 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Telepon / WhatsApp</h3>
-                                <p class="text-gray-600 dark:text-gray-300 mt-1">+62 898-5531-212</p>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.contact_phone_title') }}</h3>
+                                <p class="text-gray-600 dark:text-gray-300 mt-1">{{ __('messages.contact_phone_number') }}</p>
                                 <a href="https://wa.me/628985531212" target="_blank" class="inline-flex items-center text-emerald-600 hover:text-emerald-700 mt-2 text-sm font-medium">
-                                    Chat via WhatsApp
+                                    {{ __('messages.contact_phone_link') }}
                                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                                     </svg>
@@ -50,10 +50,10 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Email</h3>
-                                <p class="text-gray-600 dark:text-gray-300 mt-1">bincoranindofarm@gmail.com</p>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.contact_email_title') }}</h3>
+                                <p class="text-gray-600 dark:text-gray-300 mt-1">{{ __('messages.contact_email_address') }}</p>
                                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bincoranindofarm@gmail.com" class="inline-flex items-center text-emerald-600 hover:text-emerald-700 mt-2 text-sm font-medium" target="_blank">
-                                    Kirim Email
+                                    {{ __('messages.contact_email_link') }}
                                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                                     </svg>
@@ -70,10 +70,10 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Alamat Kantor</h3>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.contact_address_title') }}</h3>
                                 <p class="text-gray-600 dark:text-gray-300 mt-1">
-                                    Jl. Suruh, Kayuapak, Kec. Polokarto,<br>
-                                    Kab. Sukoharjo, Jawa Tengah 57555
+                                    {{ __('messages.contact_address_line1') }}<br>
+                                    {{ __('messages.contact_address_line2') }}
                                 </p>
                             </div>
                         </div>
@@ -86,10 +86,10 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Jam Operasional</h3>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.contact_hours_title') }}</h3>
                                 <p class="text-gray-600 dark:text-gray-300 mt-1">
-                                    Senin - Jumat: 08:00 - 17:00 WIB<br>
-                                    Sabtu: 08:00 - 12:00 WIB
+                                    {{ __('messages.contact_hours_weekdays') }}<br>
+                                    {{ __('messages.contact_hours_saturday') }}
                                 </p>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
 
                 <!-- Social Media -->
                 <div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Ikuti Kami</h3>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.contact_social_title') }}</h3>
                     <div class="flex space-x-4">
                         <a href="https://instagram.com/binco.indofarm" target="_blank" class="w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-emerald-500 hover:text-white transition-colors">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -127,37 +127,37 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
                     </div>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Kemitraan & Kolaborasi</h2>
-                    <p class="text-gray-600 dark:text-gray-300 mt-2">Kami membuka peluang kerjasama dengan berbagai pihak</p>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">{{ __('messages.contact_partnership_title') }}</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mt-2">{{ __('messages.contact_partnership_subtitle') }}</p>
                 </div>
 
                 <div class="space-y-4">
                     <div class="flex items-center space-x-3">
                         <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span class="text-gray-700 dark:text-gray-300">Mitra ekspor & importir media tanam</span>
+                        <span class="text-gray-700 dark:text-gray-300">{{ __('messages.contact_partnership_item1') }}</span>
                     </div>
                     <div class="flex items-center space-x-3">
                         <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span class="text-gray-700 dark:text-gray-300">Industri pertanian, nursery, dan urban farming</span>
+                        <span class="text-gray-700 dark:text-gray-300">{{ __('messages.contact_partnership_item2') }}</span>
                     </div>
                     <div class="flex items-center space-x-3">
                         <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span class="text-gray-700 dark:text-gray-300">Hotel, cafe, dan pusat dekorasi hijau</span>
+                        <span class="text-gray-700 dark:text-gray-300">{{ __('messages.contact_partnership_item3') }}</span>
                     </div>
                     <div class="flex items-center space-x-3">
                         <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span class="text-gray-700 dark:text-gray-300">Institusi Pendidikan & Lembaga Riset</span>
+                        <span class="text-gray-700 dark:text-gray-300">{{ __('messages.contact_partnership_item4') }}</span>
                     </div>
                     <div class="flex items-center space-x-3">
                         <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span class="text-gray-700 dark:text-gray-300">Pemerintah daerah & Komunitas pertanian</span>
+                        <span class="text-gray-700 dark:text-gray-300">{{ __('messages.contact_partnership_item5') }}</span>
                     </div>
                 </div>
 
                 <div class="mt-8 p-4 bg-white dark:bg-gray-700 rounded-lg">
-                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Greenhouse Smart Plant & Wisata Edukasi</h4>
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">{{ __('messages.contact_greenhouse_title') }}</h4>
                     <p class="text-sm text-gray-600 dark:text-gray-300">
-                        Kunjungi greenhouse kami untuk melihat langsung sistem pertanian modern dan program "Wisata Petik Melon"
+                        {{ __('messages.contact_greenhouse_desc') }}
                     </p>
                 </div>
             </div>
@@ -166,8 +166,8 @@
         <!-- Map Section -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
             <div class="p-6 border-b border-gray-200 dark:border-gray-700">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Lokasi Kami</h3>
-                <p class="text-gray-600 dark:text-gray-300 mt-1">PT Binco Ran Indofarm - Sukoharjo, Jawa Tengah</p>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ __('messages.contact_location_title') }}</h3>
+                <p class="text-gray-600 dark:text-gray-300 mt-1">{{ __('messages.contact_location_desc') }}</p>
             </div>
             <div class="h-96">
                 <iframe

@@ -1,6 +1,6 @@
 @extends('layouts.layouts-landing')
 
-@section('title', 'About Our Company')
+@section('title', __('messages.about_title'))
 
 @section('content')
 
@@ -10,10 +10,10 @@
 
         <div class="text-center mb-16">
             <h2 class="mb-4 text-4xl font-bold text-gray-900 sm:text-5xl dark:text-white">
-                About PT Binco Ran Indofarm
+                {{ __('messages.about_hero_title') }}
             </h2>
             <p class="mx-auto text-xl text-emerald-600 dark:text-emerald-400 font-semibold max-w-2xl">
-                "Transforming Coconut Waste into Sustainable Green Solutions"
+                {{ __('messages.about_hero_subtitle') }}
             </p>
         </div>
 
@@ -22,18 +22,13 @@
             <div class="space-y-8">
                 <div>
                     <h3 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-                        Building Sustainable Agriculture Through Coconut Innovation
+                        {{ __('messages.about_hero_heading') }}
                     </h3>
                     <p class="mb-6 text-lg text-gray-600 leading-relaxed dark:text-gray-300">
-                        PT Binco Ran Indofarm adalah perusahaan agribisnis modern yang berfokus pada pengolahan sabut kelapa
-                        dan penyediaan media tanam alami untuk mendukung pertanian berkelanjutan. Kami mengembangkan berbagai
-                        produk unggulan berbasis serabut kelapa seperti cocopeat, cocopot, dan cocorope yang digunakan secara
-                        luas di sektor pertanian, florikultura, dan industri.
+                        {{ __('messages.about_hero_paragraph1') }}
                     </p>
                     <p class="text-lg text-gray-600 leading-relaxed dark:text-gray-300">
-                        Didukung dengan fasilitas produksi modern, sistem greenhouse pintar, dan program wisata edukatif,
-                        PT Binco Ran Indofarm berkomitmen menghadirkan solusi pertanian yang inovatif, ramah lingkungan,
-                        dan bernilai global.
+                        {{ __('messages.about_hero_paragraph2') }}
                     </p>
                 </div>
 
@@ -46,8 +41,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Produk Berbasis Kelapa</h4>
-                            <p class="text-gray-600 dark:text-gray-300">Cocopeat, cocopot, cocorope dan turunannya</p>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.about_feature1_title') }}</h4>
+                            <p class="text-gray-600 dark:text-gray-300">{{ __('messages.about_feature1_desc') }}</p>
                         </div>
                     </div>
 
@@ -58,8 +53,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Pertanian Berkelanjutan</h4>
-                            <p class="text-gray-600 dark:text-gray-300">Mendukung sistem pertanian ramah lingkungan</p>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.about_feature2_title') }}</h4>
+                            <p class="text-gray-600 dark:text-gray-300">{{ __('messages.about_feature2_desc') }}</p>
                         </div>
                     </div>
 
@@ -70,8 +65,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Teknologi Modern</h4>
-                            <p class="text-gray-600 dark:text-gray-300">Greenhouse smart plant dengan sistem otomatis</p>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.about_feature3_title') }}</h4>
+                            <p class="text-gray-600 dark:text-gray-300">{{ __('messages.about_feature3_desc') }}</p>
                         </div>
                     </div>
                 </div>
@@ -87,15 +82,15 @@
                             <div class="grid grid-cols-3 gap-4 text-center">
                                 <div>
                                     <div class="text-2xl font-bold text-gray-900 dark:text-white">100%</div>
-                                    <div class="text-sm text-gray-600 dark:text-gray-400">Organic</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">{{ __('messages.about_stat1') }}</div>
                                 </div>
                                 <div>
                                     <div class="text-2xl font-bold text-gray-900 dark:text-white">Eco</div>
-                                    <div class="text-sm text-gray-600 dark:text-gray-400">Friendly</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">{{ __('messages.about_stat2') }}</div>
                                 </div>
                                 <div>
                                     <div class="text-2xl font-bold text-gray-900 dark:text-white">Quality</div>
-                                    <div class="text-sm text-gray-600 dark:text-gray-400">Guaranteed</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">{{ __('messages.about_stat3') }}</div>
                                 </div>
                             </div>
                         </div>
@@ -119,11 +114,10 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                         </svg>
                     </div>
-                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Visi Perusahaan</h3>
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white">{{ __('messages.about_vision_title') }}</h3>
                 </div>
                 <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Menjadi Perusahaan terdepan dalam pengolahan sabut kelapa dan penyedia media tanam berkelanjutan
-                    yang menginspirasi pertanian dan mendukung ekonomi hijau di Indonesia.
+                    {{ __('messages.about_vision_text') }}
                 </p>
             </div>
 
@@ -135,24 +129,24 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                         </svg>
                     </div>
-                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Misi Perusahaan</h3>
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white">{{ __('messages.about_mission_title') }}</h3>
                 </div>
                 <ul class="space-y-4 text-gray-700 dark:text-gray-300">
                     <li class="flex items-start gap-3">
                         <span class="text-amber-600 mt-1">•</span>
-                        <span>Mengolah limbah kelapa menjadi produk bernilai tinggi seperti cocopeat, cocopot, dan cocorope berkualitas ekspor</span>
+                        <span>{{ __('messages.about_mission_point1') }}</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <span class="text-amber-600 mt-1">•</span>
-                        <span>Menyediakan media tanam alami untuk mendukung sistem pertanian ramah lingkungan dan efisien</span>
+                        <span>{{ __('messages.about_mission_point2') }}</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <span class="text-amber-600 mt-1">•</span>
-                        <span>Mengembangkan inovasi pertanian berbasis teknologi melalui Greenhouse Smart Plant</span>
+                        <span>{{ __('messages.about_mission_point3') }}</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <span class="text-amber-600 mt-1">•</span>
-                        <span>Mendorong pariwisata edukatif pertanian melalui program Wisata Petik Melon</span>
+                        <span>{{ __('messages.about_mission_point4') }}</span>
                     </li>
                 </ul>
             </div>
@@ -164,9 +158,9 @@
 <section class="py-20 bg-gray-50 dark:bg-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Produk Unggulan Kami</h2>
+            <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">{{ __('messages.about_products_title') }}</h2>
             <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Berbagai produk berkualitas berbahan baku kelapa untuk mendukung pertanian berkelanjutan
+                {{ __('messages.about_products_subtitle') }}
             </p>
         </div>
 
@@ -178,14 +172,14 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Cocopeat</h3>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{{ __('messages.about_product1_title') }}</h3>
                 <p class="text-gray-600 dark:text-gray-300 mb-4">
-                    Media tanam organik dari serbuk halus serabut kelapa, alternatif pengganti tanah yang ramah lingkungan.
+                    {{ __('messages.about_product1_desc') }}
                 </p>
                 <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
-                    <li>• Cocopeat Block (Press Block 5 Kg)</li>
-                    <li>• Cocopeat Loose (Bagged)</li>
-                    <li>• Low EC dan High EC</li>
+                    <li>• {{ __('messages.about_product1_point1') }}</li>
+                    <li>• {{ __('messages.about_product1_point2') }}</li>
+                    <li>• {{ __('messages.about_product1_point3') }}</li>
                 </ul>
             </div>
 
@@ -196,14 +190,14 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Cocopot</h3>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{{ __('messages.about_product2_title') }}</h3>
                 <p class="text-gray-600 dark:text-gray-300 mb-4">
-                    Pot alami berbahan serabut kelapa yang biodegradable, menggantikan pot plastik konvensional.
+                    {{ __('messages.about_product2_desc') }}
                 </p>
                 <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
-                    <li>• Ramah lingkungan</li>
-                    <li>• Memperkuat sistem akar</li>
-                    <li>• Berbagai ukuran tersedia</li>
+                    <li>• {{ __('messages.about_product2_point1') }}</li>
+                    <li>• {{ __('messages.about_product2_point2') }}</li>
+                    <li>• {{ __('messages.about_product2_point3') }}</li>
                 </ul>
             </div>
 
@@ -214,14 +208,14 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Cocorope</h3>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{{ __('messages.about_product3_title') }}</h3>
                 <p class="text-gray-600 dark:text-gray-300 mb-4">
-                    Tali alami berbahan serat kelapa yang kuat dan tahan cuaca ekstrem untuk berbagai keperluan.
+                    {{ __('messages.about_product3_desc') }}
                 </p>
                 <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
-                    <li>• Cocorope Roll</li>
-                    <li>• Cocomesh & Coconet</li>
-                    <li>• Custom order available</li>
+                    <li>• {{ __('messages.about_product3_point1') }}</li>
+                    <li>• {{ __('messages.about_product3_point2') }}</li>
+                    <li>• {{ __('messages.about_product3_point3') }}</li>
                 </ul>
             </div>
 
@@ -232,14 +226,14 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Produk Pendukung</h3>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{{ __('messages.about_product4_title') }}</h3>
                 <p class="text-gray-600 dark:text-gray-300 mb-4">
-                    Berbagai produk turunan dan pendukung untuk kebutuhan pertanian dan rumah tangga.
+                    {{ __('messages.about_product4_desc') }}
                 </p>
                 <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
-                    <li>• Keset serabut kelapa</li>
-                    <li>• Sikat & kuas cocobristle</li>
-                    <li>• Sekam bakar & kohe</li>
+                    <li>• {{ __('messages.about_product4_point1') }}</li>
+                    <li>• {{ __('messages.about_product4_point2') }}</li>
+                    <li>• {{ __('messages.about_product4_point3') }}</li>
                 </ul>
             </div>
         </div>
@@ -252,31 +246,29 @@
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div>
                 <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                    Greenhouse Smart Plant & Wisata Edukasi
+                    {{ __('messages.about_greenhouse_title') }}
                 </h2>
                 <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                    Sebagai inovasi lanjutan, PT Binco Ran Indofarm mengembangkan <strong>Greenhouse Smart Plant</strong>,
-                    yaitu sistem pertanian modern dengan fertigasi otomatis dan sensor lingkungan digital.
+                    {!! __('messages.about_greenhouse_paragraph1') !!}
                 </p>
                 <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                    Kami juga membuka program <strong>"Wisata Petik Melon & Edukasi Pertanian"</strong>,
-                    yang menjadi sarana edukatif, rekreatif, dan inspiratif bagi masyarakat umum, pelajar, maupun mitra usaha.
+                    {!! __('messages.about_greenhouse_paragraph2') !!}
                 </p>
 
                 <div class="bg-emerald-50 dark:bg-gray-800 rounded-xl p-6">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Aktivitas Wisata:</h3>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">{{ __('messages.about_greenhouse_activities_title') }}</h3>
                     <ul class="space-y-3 text-gray-700 dark:text-gray-300">
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
-                            <span>Menikmati pengalaman memetik melon premium langsung dari greenhouse</span>
+                            <span>{{ __('messages.about_greenhouse_activity1') }}</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
-                            <span>Belajar mengenal sistem tanam modern (fertigasi & smart plant)</span>
+                            <span>{{ __('messages.about_greenhouse_activity2') }}</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
-                            <span>Melihat langsung penggunaan cocopeat dan media tanam alami</span>
+                            <span>{{ __('messages.about_greenhouse_activity3') }}</span>
                         </li>
                     </ul>
                 </div>
@@ -296,9 +288,9 @@
 <section class="py-20 bg-gray-50 dark:bg-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Nilai Perusahaan</h2>
+            <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">{{ __('messages.about_values_title') }}</h2>
             <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Prinsip-prinsip yang menjadi pedoman dalam setiap langkah kami
+                {{ __('messages.about_values_subtitle') }}
             </p>
         </div>
 
@@ -310,9 +302,9 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Kualitas</h3>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{{ __('messages.about_value1_title') }}</h3>
                 <p class="text-gray-600 dark:text-gray-300">
-                    Produk dengan standar ekspor dan kontrol mutu ketat untuk hasil terbaik
+                    {{ __('messages.about_value1_desc') }}
                 </p>
             </div>
 
@@ -323,14 +315,9 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                     </svg>
                 </div>
-                {{-- <div class="w-16 h-16 bg-emerald-100 dark:bg-emerald-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                </div> --}}
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Keberlanjutan</h3>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{{ __('messages.about_value2_title') }}</h3>
                 <p class="text-gray-600 dark:text-gray-300">
-                    Bahan alami, ramah lingkungan, dan mendukung circular economy
+                    {{ __('messages.about_value2_desc') }}
                 </p>
             </div>
 
@@ -342,9 +329,9 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Inovasi</h3>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{{ __('messages.about_value3_title') }}</h3>
                 <p class="text-gray-600 dark:text-gray-300">
-                    Greenhouse Smart Plant sebagai wujud penerapan teknologi pertanian modern
+                    {{ __('messages.about_value3_desc') }}
                 </p>
             </div>
 
@@ -355,9 +342,9 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Kemitraan</h3>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{{ __('messages.about_value4_title') }}</h3>
                 <p class="text-gray-600 dark:text-gray-300">
-                    Tumbuh bersama petani dan pelaku usaha lokal untuk kemajuan bersama
+                    {{ __('messages.about_value4_desc') }}
                 </p>
             </div>
         </div>
@@ -368,9 +355,9 @@
 <section class="py-20 bg-white dark:bg-gray-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Kontak Kami</h2>
+            <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">{{ __('messages.about_contact_title') }}</h2>
             <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Mari berkolaborasi untuk menciptakan pertanian yang lebih berkelanjutan
+                {{ __('messages.about_contact_subtitle') }}
             </p>
         </div>
 
@@ -378,7 +365,7 @@
             <!-- Contact Info -->
             <div class="space-y-8">
                 <div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Informasi Kontak</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">{{ __('messages.about_contact_info_title') }}</h3>
 
                     <div class="space-y-4">
                         <div class="flex items-center gap-4">
@@ -389,9 +376,9 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Alamat</h4>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">{{ __('messages.about_contact_address_title') }}</h4>
                                 <p class="text-gray-600 dark:text-gray-300">
-                                    Jl. Suruh, Kayuapak, Kec. Polokarto, Kab. Sukoharjo, Jawa Tengah 57555
+                                    {{ __('messages.about_contact_address') }}
                                 </p>
                             </div>
                         </div>
@@ -403,8 +390,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Telepon/WhatsApp</h4>
-                                <p class="text-gray-600 dark:text-gray-300">+62 898-5531-212</p>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">{{ __('messages.about_contact_phone_title') }}</h4>
+                                <p class="text-gray-600 dark:text-gray-300">{{ __('messages.about_contact_phone') }}</p>
                             </div>
                         </div>
 
@@ -415,8 +402,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Email</h4>
-                                <p class="text-gray-600 dark:text-gray-300">bincoranindofarm@gmail.com</p>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">{{ __('messages.about_contact_email_title') }}</h4>
+                                <p class="text-gray-600 dark:text-gray-300">{{ __('messages.about_contact_email') }}</p>
                             </div>
                         </div>
 
@@ -427,8 +414,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Social Media</h4>
-                                <p class="text-gray-600 dark:text-gray-300">@binco.indofarm (IG/Tiktok/Youtube)</p>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">{{ __('messages.about_contact_social_title') }}</h4>
+                                <p class="text-gray-600 dark:text-gray-300">{{ __('messages.about_contact_social') }}</p>
                             </div>
                         </div>
                     </div>
@@ -436,16 +423,16 @@
 
                 <!-- Partnership -->
                 <div class="bg-emerald-50 dark:bg-gray-800 rounded-xl p-6">
-                    <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Kemitraan & Kolaborasi</h4>
+                    <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-4">{{ __('messages.about_partnership_title') }}</h4>
                     <p class="text-gray-600 dark:text-gray-300 mb-4">
-                        Kami membuka peluang kerjasama dengan berbagai pihak:
+                        {{ __('messages.about_partnership_desc') }}
                     </p>
                     <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2">
-                        <li>• Mitra ekspor & importir media tanam</li>
-                        <li>• Industry pertanian, nursery, dan urban farming</li>
-                        <li>• Hotel, cafe, dan pusat dekorasi hijau</li>
-                        <li>• Institusi Pendidikan & Lembaga Riset</li>
-                        <li>• Pemerintah daerah & Komunitas pertanian</li>
+                        <li>• {{ __('messages.about_partnership_point1') }}</li>
+                        <li>• {{ __('messages.about_partnership_point2') }}</li>
+                        <li>• {{ __('messages.about_partnership_point3') }}</li>
+                        <li>• {{ __('messages.about_partnership_point4') }}</li>
+                        <li>• {{ __('messages.about_partnership_point5') }}</li>
                     </ul>
                 </div>
             </div>

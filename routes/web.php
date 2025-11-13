@@ -11,7 +11,14 @@ use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\User\UserLandingController;
 use App\Http\Controllers\User\UserCheckoutController;
+use Illuminate\Support\Facades\Session;
 
+Route::get('/set-locale/{lang}', function ($lang) {
+    if (in_array($lang, ['en', 'id'])) {
+        Session::put('locale', $lang);
+    }
+    return redirect()->back();
+})->name('set-locale');
 //Landing Page Routes
 Route::get('/', [UserLandingController::class, 'index'])->name('home');
 

@@ -1,0 +1,134 @@
+{
+  "id": {
+    "nav": {
+      "home": "Beranda",
+      "about": "Tentang Kami",
+      "products": "Produk",
+      "gallery": "Galeri",
+      "contact": "Kontak",
+      "login": "Masuk",
+      "register": "Daftar"
+    },
+    "hero": {
+      "tagline": "Future Organic Plant Garden",
+      "title_line1": "Pertanian Cerdas",
+      "title_line2": "dan Berkelanjutan",
+      "title_line3": "Inovasi Kelapa",
+      "subtitle": "PT Binco Ran Indofarm — menghadirkan produk pertanian premium dengan standar tertinggi, didukung R&D mutakhir.",
+      "company_name": "PT Binco RAN Indofarm",
+      "see_products": "Lihat Produk",
+      "learn_more": "Pelajari Kami"
+    },
+    "about": {
+      "title": "Tentang Perusahaan Kami",
+      "heading": "PT Binco Indofarm: <span class=\"text-emerald-600\">Inovasi Agribisnis</span> untuk Masa Depan",
+      "description": "Kami menghadirkan solusi agribisnis komprehensif — dari benih unggul, pupuk formulasi canggih, hingga layanan pascapanen terintegrasi.",
+      "feature1_title": "Pengalaman Industri",
+      "feature1_desc": "Lebih dari dua dekade mengembangkan solusi pertanian terdepan",
+      "feature2_title": "Tim R&D & QC Profesional",
+      "feature2_desc": "Inovasi berbasis penelitian dengan standar kualitas tertinggi",
+      "feature3_title": "Jaringan Distribusi Luas",
+      "feature3_desc": "Akses produk kami tersedia di seluruh Indonesia dengan dukungan logistik terintegrasi",
+      "stats_years": "Tahun Berdiri",
+      "stats_projects": "Proyek",
+      "stats_clients": "Klien",
+      "stats_collaborations": "Kolaborasi"
+    },
+    "products": {
+      "title": "Produk Unggulan Kami",
+      "subtitle": "Solusi agribisnis komprehensif dari olahan serabut kelapa dan bahan alami.",
+      "cocopeat": "Cocopeat",
+      "cocopot": "Cocopot",
+      "cocorope": "Cocorope",
+      "supporting": "Produk Pendukung",
+      "see_all": "Lihat Semua Produk"
+    },
+    "contact": {
+      "title": "Hubungi Kami",
+      "subtitle": "Kami siap membantu Anda dengan solusi terbaik",
+      "name": "Nama Lengkap",
+      "email": "Alamat Email",
+      "phone": "Nomor Telepon",
+      "message": "Pesan",
+      "send": "Kirim Pesan",
+      "address": "Alamat",
+      "working_hours": "Jam Kerja",
+      "partnership_title": "Kemitraan & Kolaborasi",
+      "partnership_subtitle": "Kami membuka peluang kerjasama dengan berbagai pihak"
+    },
+    "footer": {
+      "description": "Perusahaan agribisnis modern yang berfokus pada pengolahan sabut kelapa dan penyediaan media tanam alami.",
+      "quick_links": "Tautan Cepat",
+      "products": "Produk",
+      "contact": "Kontak",
+      "connect": "Terhubung Dengan Kami",
+      "rights": "Hak Cipta Dilindungi."
+    }
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "products": "Products",
+      "gallery": "Gallery",
+      "contact": "Contact",
+      "login": "Login",
+      "register": "Register"
+    },
+    "hero": {
+      "tagline": "Future Organic Plant Garden",
+      "title_line1": "Smart Agriculture",
+      "title_line2": "and Sustainable",
+      "title_line3": "Coconut Innovation",
+      "subtitle": "PT Binco Ran Indofarm — presenting premium agricultural products with the highest standards, supported by advanced R&D.",
+      "company_name": "PT Binco RAN Indofarm",
+      "see_products": "See Products",
+      "learn_more": "Learn More"
+    },
+    "about": {
+      "title": "About Our Company",
+      "heading": "PT Binco Indofarm: <span class=\"text-emerald-600\">Agribusiness Innovation</span> for the Future",
+      "description": "We present comprehensive agribusiness solutions — from superior seeds, advanced formulation fertilizers, to integrated post-harvest services.",
+      "feature1_title": "Industry Experience",
+      "feature1_desc": "More than two decades developing leading agricultural solutions",
+      "feature2_title": "Professional R&D & QC Team",
+      "feature2_desc": "Research-based innovation with the highest quality standards",
+      "feature3_title": "Wide Distribution Network",
+      "feature3_desc": "Our products are available throughout Indonesia with integrated logistics support",
+      "stats_years": "Years Established",
+      "stats_projects": "Projects",
+      "stats_clients": "Clients",
+      "stats_collaborations": "Collaborations"
+    },
+    "products": {
+      "title": "Our Featured Products",
+      "subtitle": "Comprehensive agribusiness solutions from processed coconut fiber and natural materials.",
+      "cocopeat": "Cocopeat",
+      "cocopot": "Cocopot",
+      "cocorope": "Cocorope",
+      "supporting": "Supporting Products",
+      "see_all": "See All Products"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "We're ready to help you with the best solutions",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Message",
+      "send": "Send Message",
+      "address": "Address",
+      "working_hours": "Working Hours",
+      "partnership_title": "Partnership & Collaboration",
+      "partnership_subtitle": "We open opportunities for cooperation with various parties"
+    },
+    "footer": {
+      "description": "Modern agribusiness company focusing on coconut fiber processing and providing natural planting media.",
+      "quick_links": "Quick Links",
+      "products": "Products",
+      "contact": "Contact",
+      "connect": "Connect With Us",
+      "rights": "All Rights Reserved."
+    }
+  }
+}

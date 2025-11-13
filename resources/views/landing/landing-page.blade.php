@@ -67,55 +67,73 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <img src="{{ asset('images/img3.jpg') }}" class="w-full h-full object-cover" alt="Slide 3"
                     loading="lazy">
             </div>
+            <div class="flex-shrink-0 w-full h-full relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-gray-900/40 z-10"></div>
+                <img src="{{ asset('/images/produk_unggulan/cocopeat4.jpg') }}" class="w-full h-full object-cover" alt="Slide 3"
+                    loading="lazy">
+            </div>
+            <div class="flex-shrink-0 w-full h-full relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-gray-900/40 z-10"></div>
+                <img src="{{ asset('/images/produk_unggulan/cocopot1.jpg') }}" class="w-full h-full object-cover" alt="Slide 3"
+                    loading="lazy">
+            </div>
+            <div class="flex-shrink-0 w-full h-full relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-gray-900/40 z-10"></div>
+                <img src="{{ asset('/images/produk_unggulan/cocorope2.jpg') }}" class="w-full h-full object-cover" alt="Slide 3"
+                    loading="lazy">
+            </div>
         </div>
 
         <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-30 h-full">
             <!-- Premium Badge -->
             <div
                 class="mb-6 px-5 py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full inline-flex items-center shadow-lg">
-                <span class="text-white text-sm font-medium tracking-wider">Future Organic Plant Garden</span>
+                <span class="text-white text-sm font-medium tracking-wider">
+                    {{ __('messages.hero_badge') }}
+                </span>
             </div>
 
             <h1 class="text-4xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                <span class="block uppercase">Smart Agriculture</span>
-                <span class="block uppercase">and Sustainable </span>
-                <span class="block text-emerald-400 mt-2 uppercase font-extrabold"> Coconut Innovation</span>
+                <span class="block uppercase">{{ __('messages.hero_title_1') }}</span>
+                <span class="block uppercase">{{ __('messages.hero_title_2') }}</span>
+                <span class="block text-emerald-400 mt-2 uppercase font-extrabold">
+                    {{ __('messages.hero_title_3') }}
+                </span>
             </h1>
 
-            <!-- Subtle underline -->
             <div class="w-24 h-1 bg-emerald-500 rounded-full mb-6 mx-auto"></div>
 
-
             <p class="mt-4 max-w-3xl text-xl text-gray-200 font-light leading-relaxed">
-                PT Binco Ran Indofarm — <span class="font-semibold text-emerald-300">anak perusahaan BINCO
-                    NUSANTARA</span> — menghadirkan
-                produk pertanian premium dengan standar tertinggi, didukung R&D mutakhir.
+                {{ __('messages.hero_description') }}
             </p>
 
             <p class="mt-4 max-w-3xl sm:text-xl text-xl text-gray-200 leading-relaxed font-bold uppercase">
-                PT Binco RAN Indofarm
+                {{ __('messages.company_name') }}
             </p>
 
             <div class="mt-8 flex gap-4 flex-wrap justify-center">
                 <a href="#produk"
-                    class="group inline-flex items-center px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-emerald-500/30">
-                    <span class="font-semibold tracking-wide">Lihat Produk</span>
+                class="group inline-flex items-center px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-emerald-500/30">
+                    <span class="font-semibold tracking-wide">{{ __('messages.btn_products') }}</span>
                     <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
                 </a>
+
                 <a href="#siapa-kami"
-                    class="group inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/30 text-white rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    <span class="font-semibold tracking-wide">Pelajari Kami</span>
+                class="group inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/30 text-white rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <span class="font-semibold tracking-wide">{{ __('messages.btn_about') }}</span>
                     <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </a>
             </div>
         </div>
+
 
         <!-- Carousel Controls -->
         <button id="carousel-prev" aria-label="Previous" class="absolute left-6 top-1/2 -translate-y-1/2 z-40 flex items-center justify-center w-12 h-12 rounded-full
@@ -162,21 +180,19 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                     </path>
                 </svg>
             </div>
-            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Tentang <span
-                    class="text-emerald-600">Perusahaan Kami</span></h2>
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                {{ __('messages.Tentang') }} <span class="text-emerald-600">{{ __('messages.Perusahaan Kami') }}</span>
+            </h2>
             <div class="w-24 h-1 bg-emerald-500 rounded-full mx-auto"></div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
                 <h3 class="text-3xl font-bold text-gray-900 dark:text-white leading-tight">PT Binco Indofarm: <span
-                        class="text-emerald-600">Inovasi Agribisnis</span> untuk Masa Depan</h3>
+                        class="text-emerald-600">{{ __('messages.Inovasi Agribisnis') }}</span> {{ __('messages.untuk Masa Depan') }}</h3>
 
                 <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Sebagai anak perusahaan <span class="font-semibold text-emerald-700 dark:text-emerald-400">BINCO
-                        NUSANTARA</span>,
-                    kami menghadirkan solusi agribisnis komprehensif — dari benih unggul, pupuk formulasi canggih,
-                    hingga layanan pascapanen terintegrasi.
+                    {{ __('messages.Kami menghadirkan solusi agribisnis komprehensif — dari benih unggul, pupuk formulasi canggih, hingga layanan pascapanen terintegrasi.') }}
                 </p>
 
                 <!-- Enhanced Feature List -->
@@ -192,9 +208,10 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-900 dark:text-white">Pengalaman Industri</h4>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm mt-1">Lebih dari dua dekade mengembangkan
-                                solusi pertanian terdepan</p>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">{{ __('messages.Pengalaman Industri') }}</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mt-1">
+                                {{ __('messages.Lebih dari dua dekade mengembangkan solusi pertanian terdepan') }}
+                            </p>
                         </div>
                     </div>
 
@@ -210,9 +227,10 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-900 dark:text-white">Tim R&D & QC Profesional</h4>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm mt-1">Inovasi berbasis penelitian dengan
-                                standar kualitas tertinggi</p>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">{{ __('messages.Tim R&D & QC Profesional') }}</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mt-1">
+                                {{ __('messages.Inovasi berbasis penelitian dengan standar kualitas tertinggi') }}
+                            </p>
                         </div>
                     </div>
 
@@ -228,12 +246,14 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-900 dark:text-white">Jaringan Distribusi Luas</h4>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm mt-1">Akses produk kami tersedia di
-                                seluruh Indonesia dengan dukungan logistik terintegrasi</p>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">{{ __('messages.Jaringan Distribusi Luas') }}</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mt-1">
+                                {{ __('messages.Akses produk kami tersedia di seluruh Indonesia dengan dukungan logistik terintegrasi') }}
+                            </p>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="h-full flex flex-col justify-start">
@@ -251,25 +271,26 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
                     <div
                         class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-                        <div class="text-3xl font-bold text-gray-900 dark:text-white counter" data-target="1998">0</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">Tahun Berdiri</div>
+                        <div class="text-3xl font-bold text-gray-900 dark:text-white counter" data-target="2025">0</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">{{ __('messages.Tahun Berdiri') }}</div>
                     </div>
                     <div
                         class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
                         <div class="text-3xl font-bold text-gray-900 dark:text-white counter" data-target="125">0</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">Proyek</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">{{ __('messages.Proyek') }}</div>
                     </div>
                     <div
                         class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
                         <div class="text-3xl font-bold text-gray-900 dark:text-white counter" data-target="300">0</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">Klien</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">{{ __('messages.Klien') }}</div>
                     </div>
                     <div
                         class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-                        <div class="text-3xl font-bold text-gray-900 dark:text-white counter" data-target="45">0</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">Kolaborasi</div>
+                        <div class="text-3xl text-gray-900 dark:text-white counter font-bold" data-target="45">0</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">{{ __('messages.Kolaborasi') }}</div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -280,10 +301,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-5 dark:opacity-10">
         <div class="absolute top-0 left-0 w-full h-full"
-            style="background-image: url('data:image/svg+xml,%3Csvg width=\" 20\" height=\"20\" viewBox=\"0 0 20 20\"
-            xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%2334d399\" fill-opacity=\"0.4\"
-            fill-rule=\"evenodd\"%3E%3Ccircle cx=\"3\" cy=\"3\" r=\"3\"/%3E%3Ccircle cx=\"13\" cy=\"13\"
-            r=\"3\"/%3E%3C/g%3E%3C/svg%3E');">
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%2334d399\" fill-opacity=\"0.4\" fill-rule=\"evenodd\"%3E%3Ccircle cx=\"3\" cy=\"3\" r=\"3\"/%3E%3Ccircle cx=\"13\" cy=\"13\" r=\"3\"/%3E%3C/g%3E%3C/svg%3E');">
         </div>
     </div>
 
@@ -292,17 +310,15 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
             <div class="order-2 lg:order-1">
                 <!-- Section Header -->
                 <div class="mb-2">
-                    <span class="text-emerald-600 font-semibold">MENGAPA MEMILIH KAMI</span>
-                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mt-2">Keunggulan <span
-                            class="text-emerald-600">Solusi Agribisnis</span> Kami</h3>
+                    <span class="text-emerald-600 font-semibold">{{ __('messages.MENGAPA MEMILIH KAMI') }}</span>
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mt-2">
+                        {{ __('messages.Keunggulan') }} <span class="text-emerald-600">{{ __('messages.Solusi Agribisnis') }}</span> {{ __('messages.Kami') }}
+                    </h3>
                     <div class="w-20 h-1 bg-emerald-500 rounded-full mt-4"></div>
                 </div>
 
                 <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                    Kami menghadirkan pendekatan terintegrasi yang menggabungkan penelitian mutakhir, kontrol kualitas
-                    laboratorium,
-                    dan dukungan teknis lapangan untuk memastikan produk yang konsisten, aman, dan efektif bagi mitra
-                    kami.
+                    {{ __('messages.Kami menghadirkan pendekatan terintegrasi yang menggabungkan penelitian mutakhir, kontrol kualitas laboratorium, dan dukungan teknis lapangan untuk memastikan produk yang konsisten, aman, dan efektif bagi mitra kami.') }}
                 </p>
 
                 <!-- Enhanced Feature List -->
@@ -312,16 +328,16 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                             class="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                                </path>
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 dark:text-white text-lg">Standar QC Ketat & Uji
-                                Laboratorium</h4>
-                            <p class="text-gray-600 dark:text-gray-300 mt-2">Setiap produk melalui proses quality
-                                control multi-tahap dengan teknologi laboratorium modern untuk memastikan kualitas
-                                terbaik.</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-lg">
+                                {{ __('messages.Standar QC Ketat & Uji Laboratorium') }}
+                            </h4>
+                            <p class="text-gray-600 dark:text-gray-300 mt-2">
+                                {{ __('messages.Setiap produk melalui proses quality control multi-tahap dengan teknologi laboratorium modern untuk memastikan kualitas terbaik.') }}
+                            </p>
                         </div>
                     </div>
 
@@ -330,14 +346,14 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                             class="flex-shrink-0 w-12 h-12 rounded-xl bg-amber-600 flex items-center justify-center shadow-lg">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
-                                </path>
+                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 dark:text-white text-lg">Solusi Terpersonalisasi</h4>
-                            <p class="text-gray-600 dark:text-gray-300 mt-2">Kami menyediakan solusi yang dapat
-                                disesuaikan dengan kebutuhan spesifik berbagai komoditas dan kondisi geografis.</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-lg">{{ __('messages.Solusi Terpersonalisasi') }}</h4>
+                            <p class="text-gray-600 dark:text-gray-300 mt-2">
+                                {{ __('messages.Kami menyediakan solusi yang dapat disesuaikan dengan kebutuhan spesifik berbagai komoditas dan kondisi geografis.') }}
+                            </p>
                         </div>
                     </div>
 
@@ -346,35 +362,33 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                             class="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
-                                </path>
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 dark:text-white text-lg">Dukungan Teknis & Pelatihan</h4>
-                            <p class="text-gray-600 dark:text-gray-300 mt-2">Tim ahli kami memberikan pendampingan
-                                teknis dan program pelatihan untuk memastikan keberhasilan implementasi di lapangan.</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-lg">{{ __('messages.Dukungan Teknis & Pelatihan') }}</h4>
+                            <p class="text-gray-600 dark:text-gray-300 mt-2">
+                                {{ __('messages.Tim ahli kami memberikan pendampingan teknis dan program pelatihan untuk memastikan keberhasilan implementasi di lapangan.') }}
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="order-1 lg:order-2 relative">
-                <!-- Floating Image with Decorative Elements -->
                 <div class="relative">
                     <div
                         class="absolute -top-6 -left-6 w-full h-full bg-emerald-200 dark:bg-emerald-900/30 rounded-2xl transform rotate-3 z-0">
                     </div>
                     <div
                         class="relative rounded-2xl overflow-hidden shadow-xl z-10 transform hover:-translate-y-2 transition-transform duration-500 border border-gray-200 dark:border-gray-700">
-                        <img src="{{ asset('/images/cocopeat_20250201_110118_0000.jpg') }}" alt="Kenapa memilih kami"
+                        <img src="{{ asset('/images/cocopeat_20250201_110118_0000.jpg') }}" alt="{{ __('messages.Kenapa memilih kami') }}"
                             class="w-full h-96 object-cover" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
 
-                        <!-- Floating Badge -->
                         <div
                             class="absolute top-6 right-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
-                            <span class="text-emerald-700 dark:text-emerald-400 font-bold text-sm">QUALITY FIRST</span>
+                            <span class="text-emerald-700 dark:text-emerald-400 font-bold text-sm">{{ __('messages.QUALITY FIRST') }}</span>
                         </div>
                     </div>
                 </div>
@@ -382,6 +396,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
         </div>
     </div>
 </section>
+
 
 
 
@@ -465,42 +480,37 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
 
             <div class="space-y-6">
                 <p class="text-emerald-600 font-semibold tracking-wide uppercase">
-                    Inovasi & Edukasi
+                    {{ __('messages.Inovasi & Edukasi') }}
                 </p>
                 <h3 class="text-4xl font-bold text-gray-900 dark:text-white">
-                    Greenhouse Smart Plant & Wisata Edukasi Petik Melon
+                    {{ __('messages.Greenhouse Smart Plant & Wisata Edukasi Petik Melon') }}
                 </h3>
                 <p class="text-lg text-gray-600 dark:text-gray-300 text-justify">
-                    Sebagai inovasi lanjutan, PT Binco Ran Indofarm mengembangkan Greenhouse Smart Plant, yaitu sistem
-                    pertanian modern dengan fertigasi otomatis dan sensor lingkungan digital.
+                    {{ __('messages.innovation_paragraph1') }}
                 </p>
                 <p class="text-lg text-gray-600 dark:text-gray-300 text-justify">
-                    Kami juga membuka program "Wisata Petik Melon & Edukasi Pertanian", sebuah sarana edukatif,
-                    rekreatif, dan inspiratif bagi masyarakat.
+                    {{ __('messages.innovation_paragraph2') }}
                 </p>
 
-                <h4 class="text-2xl font-bold text-gray-900 dark:text-white pt-4">Apa yang Anda Dapatkan:</h4>
+                <h4 class="text-2xl font-bold text-gray-900 dark:text-white pt-4">
+                    {{ __('messages.education_title') }}
+                </h4>
+
                 <ul class="space-y-3">
-                    @php
-                    $edukasiFeatures = [
-                    "Menikmati pengalaman memetik melon premium.",
-                    "Belajar sistem tanam modern (fertigasi & smart plant).",
-                    "Melihat langsung penggunaan cocopeat & media tanam alami."
-                    ];
-                    @endphp
-                    @foreach ($edukasiFeatures as $feature)
-                    <li class="flex items-start space-x-3">
-                        <div class="flex-shrink-0 pt-1">
-                            <svg class="w-6 h-6 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <p class="text-lg text-gray-600 dark:text-gray-300">{{ $feature }}</p>
-                    </li>
+                    @foreach (__('messages.education_features') as $feature)
+                        <li class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 pt-1">
+                                <svg class="w-6 h-6 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <p class="text-lg text-gray-600 dark:text-gray-300">{{ $feature }}</p>
+                        </li>
                     @endforeach
                 </ul>
+
             </div>
         </div>
     </div>
@@ -511,6 +521,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
 <section class="py-20 bg-gray-50 dark:bg-gray-800" x-data="{ activeTab: 'cocopeat' }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
+        <!-- Header -->
         <div class="text-center mb-16">
             <div
                 class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-600 text-white mb-4 shadow-lg">
@@ -519,83 +530,61 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                         d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
                 </svg>
             </div>
-            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Produk <span
-                    class="text-emerald-600">Unggulan Kami</span></h2>
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                {{ __('messages.produk_unggulan_judul') }}
+                <span class="text-emerald-600">{{ __('messages.produk_unggulan_highlight') }}</span>
+            </h2>
             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Solusi agribisnis komprehensif dari olahan serabut kelapa dan bahan alami.
+                {{ __('messages.produk_unggulan_deskripsi') }}
             </p>
             <div class="w-24 h-1 bg-emerald-500 rounded-full mx-auto mt-6"></div>
         </div>
 
+        <!-- Tabs -->
         <div class="flex flex-wrap justify-center gap-4 mb-12">
-            <button @click="activeTab = 'cocopeat'" :class="{
-                    'bg-emerald-600 text-white shadow-lg': activeTab === 'cocopeat',
-                    'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600': activeTab !== 'cocopeat'
-                }" class="px-6 py-3 font-semibold rounded-lg transition-all duration-300">
-                Cocopeat
-            </button>
-            <button @click="activeTab = 'cocopot'" :class="{
-                    'bg-emerald-600 text-white shadow-lg': activeTab === 'cocopot',
-                    'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600': activeTab !== 'cocopot'
-                }" class="px-6 py-3 font-semibold rounded-lg transition-all duration-300">
-                Cocopot
-            </button>
-            <button @click="activeTab = 'cocorope'" :class="{
-                    'bg-emerald-600 text-white shadow-lg': activeTab === 'cocorope',
-                    'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600': activeTab !== 'cocorope'
-                }" class="px-6 py-3 font-semibold rounded-lg transition-all duration-300">
-                Cocorope
-            </button>
-            <button @click="activeTab = 'pendukung'" :class="{
-                    'bg-emerald-600 text-white shadow-lg': activeTab === 'pendukung',
-                    'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600': activeTab !== 'pendukung'
-                }" class="px-6 py-3 font-semibold rounded-lg transition-all duration-300">
-                Produk Pendukung
-            </button>
+            @foreach ([
+                'cocopeat' => __('messages.tab_cocopeat'),
+                'cocopot' => __('messages.tab_cocopot'),
+                'cocorope' => __('messages.tab_cocorope'),
+                'pendukung' => __('messages.tab_pendukung')
+            ] as $tab => $label)
+                <button @click="activeTab = '{{ $tab }}'"
+                    :class="{
+                        'bg-emerald-600 text-white shadow-lg': activeTab === '{{ $tab }}',
+                        'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600': activeTab !== '{{ $tab }}'
+                    }"
+                    class="px-6 py-3 font-semibold rounded-lg transition-all duration-300">
+                    {{ $label }}
+                </button>
+            @endforeach
         </div>
 
+        <!-- Content -->
         <div class="relative">
 
+            <!-- Cocopeat -->
             <div x-show="activeTab === 'cocopeat'">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div class="space-y-5">
-                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Cocopeat (Media Tanam Organik)</h3>
+                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">{{ __('messages.cocopeat_judul') }}</h3>
                         <p class="text-lg text-gray-600 dark:text-gray-300 text-justify">
-                            Serbuk halus hasil olahan serabut kelapa sebagai media tanam alternatif pengganti tanah.
-                            Kami memproduksi 2 jenis:
+                            {{ __('messages.cocopeat_deskripsi') }}
                         </p>
                         <ul class="space-y-2">
-                            <li><strong class="dark:text-white">Cocopeat Block (Press 5 Kg):</strong> Cocok untuk ekspor
-                                (Low EC & High EC).</li>
-                            <li><strong class="dark:text-white">Cocopeat Loose (Bagged):</strong> Siap pakai untuk
-                                hidroponik dan nursery.</li>
+                            <li><strong class="dark:text-white">{{ __('messages.cocopeat_block') }}</strong></li>
+                            <li><strong class="dark:text-white">{{ __('messages.cocopeat_loose') }}</strong></li>
                         </ul>
-                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white pt-2">Keunggulan:</h4>
+                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white pt-2">{{ __('messages.keunggulan') }}</h4>
                         <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Daya serap air tinggi & sirkulasi udara optimal.</li>
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>100% organik, ramah lingkungan.</li>
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Menjaga kelembaban & pH netral.</li>
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Steril dan bebas patogen.</li>
+                            @foreach (__('messages.cocopeat_features') as $feature)
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd" />
+                                    </svg>{{ $feature }}
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div>
@@ -605,34 +594,25 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 </div>
             </div>
 
+            <!-- Cocopot -->
             <div x-show="activeTab === 'cocopot'">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div class="space-y-5">
-                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Cocopot (Pot tanam Organik)</h3>
+                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">{{ __('messages.cocopot_judul') }}</h3>
                         <p class="text-lg text-gray-600 dark:text-gray-300 text-justify">
-                            Pot alami berbahan serabut kelapa yang dirancang untuk menggantikan pot plastik. Tersedia
-                            berbagai ukuran untuk tanaman hortikultura, bunga, hingga tanaman industri.
+                            {{ __('messages.cocopot_deskripsi') }}
                         </p>
-                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white pt-2">Keunggulan:</h4>
+                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white pt-2">{{ __('messages.keunggulan') }}</h4>
                         <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Ramah lingkungan dan biodegradable.</li>
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Memperkuat sistem akar tanaman.</li>
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Menambah estetika.</li>
+                            @foreach (__('messages.cocopot_features') as $feature)
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd" />
+                                    </svg>{{ $feature }}
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div>
@@ -642,34 +622,25 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 </div>
             </div>
 
+            <!-- Cocorope -->
             <div x-show="activeTab === 'cocorope'">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div class="space-y-5">
-                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Cocorope (Tali Serabut Kelapa)</h3>
+                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">{{ __('messages.cocorope_judul') }}</h3>
                         <p class="text-lg text-gray-600 dark:text-gray-300 text-justify">
-                            Tali alami berbahan serat kelapa, kuat dan tahan terhadap cuaca ekstrem. Digunakan dibidang
-                            pertanian, konstruksi, dekorasi, dan kebutuhan rumah tangga.
+                            {{ __('messages.cocorope_deskripsi') }}
                         </p>
-                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white pt-2">Varian:</h4>
+                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white pt-2">{{ __('messages.varian') }}</h4>
                         <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Cocorope Roll</li>
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Cocomesh & Coconet (Jaring)</li>
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Custume order untuk agrikultur dan dekorasi.</li>
+                            @foreach (__('messages.cocorope_features') as $feature)
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd" />
+                                    </svg>{{ $feature }}
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div>
@@ -679,40 +650,25 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 </div>
             </div>
 
+            <!-- Pendukung -->
             <div x-show="activeTab === 'pendukung'">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div class="space-y-5">
-                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Produk Pendukung</h3>
+                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">{{ __('messages.pendukung_judul') }}</h3>
                         <p class="text-lg text-gray-600 dark:text-gray-300 text-justify">
-                            Selain produk utama, kami juga memproduksi berbagai hasil olahan serabut kelapa dan bahan
-                            pertanian alami.
+                            {{ __('messages.pendukung_deskripsi') }}
                         </p>
-                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white pt-2">Produk Lainnya:</h4>
+                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white pt-2">{{ __('messages.produk_lainnya') }}</h4>
                         <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Keset serabut kelapa</li>
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Sikat dan kuas cocobristle</li>
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Kemoceng teleskopik</li>
-                            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-500"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>Sekam bakar dan kohe fermentasi.</li>
+                            @foreach (__('messages.pendukung_features') as $feature)
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd" />
+                                    </svg>{{ $feature }}
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div>
@@ -723,9 +679,9 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
             </div>
 
         </div>
-
     </div>
 </section>
+
 
 
 <div class="w-full bg-white py-12 dark:bg-gray-950">
@@ -743,10 +699,10 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                         d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
                 </svg>
             </div>
-            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Katalog <span
-                    class="text-emerald-600">Produk</span></h2>
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">{{ __('messages.katalog_judul') }}<span
+                    class="text-emerald-600">{{ __('messages.katalog_highlight') }} </span></h2>
             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Lihat koleksi lengkap produk unggulan kami
+                {{ __('messages.katalog_deskripsi') }}
             </p>
             <div class="w-24 h-1 bg-emerald-500 rounded-full mx-auto mt-6"></div>
         </div>
@@ -756,7 +712,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div class="carousel-slide h-full">
                     <div
                         class="relative h-full bg-white border-2 border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden group">
-                        <img src="{{ asset('/images/produk_unggulan/cocopeat3.png') }}" alt="Slide 1"
+                        <img src="{{ asset('/images/produk_unggulan/cocopeat3.PNG') }}" alt="Slide 1"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 flex items-end justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
@@ -767,7 +723,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div class="carousel-slide h-full">
                     <div
                         class="relative h-full bg-white border-2 border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden group">
-                        <img src="{{ asset('/images/produk_unggulan/cocobristle.png') }}" alt="Slide 2"
+                        <img src="{{ asset('/images/produk_unggulan/Cocobristle.png') }}" alt="Slide 2"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 flex items-end justify-center p-6 transition-opacity duration-300 group-hover:bg-opacity-10">
@@ -828,21 +784,21 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
             <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
-            <span class="sr-only">Previous</span>
+            <span class="sr-only">{{ __('messages.prev') }}</span>
         </button>
         <button type="button"
             class="absolute top-1/2 -translate-y-1/2 carousel-next end-5 max-sm:end-3 carousel-disabled:opacity-50 size-9.5 bg-white/50 hover:bg-gray-100 border border-gray-200 flex items-center justify-center rounded-full shadow-base-300/20 shadow-sm">
             <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
-            <span class="sr-only">Next</span>
+            <span class="sr-only">{{ __('messages.next') }}</span>
         </button>
     </div>
 
     <div class="mt-16 text-center">
         <a href="{{ route('product') }}"
             class="group inline-flex items-center px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-emerald-500/30">
-            <span class="font-semibold tracking-wide">Lihat Semua Produk</span>
+            <span class="font-semibold tracking-wide">{{ __('messages.katalog_button') }}</span>
             <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
                 viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
@@ -856,9 +812,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
 <section id="testimoni" class="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
     <div class="absolute inset-0 opacity-5 dark:opacity-10">
         <div class="absolute top-0 left-0 w-full h-full"
-            style="background-image: url('data:image/svg+xml,%3Csvg width=\" 40\" height=\"40\" viewBox=\"0 0 40 40\"
-            xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%2334d399\" fill-opacity=\"0.2\"
-            fill-rule=\"evenodd\"%3E%3Cpath d=\"M0 40L40 0H20L0 20M40 40V20L20 40\"/%3E%3C/g%3E%3C/svg%3E');">
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%2334d399\" fill-opacity=\"0.2\" fill-rule=\"evenodd\"%3E%3Cpath d=\"M0 40L40 0H20L0 20M40 40V20L20 40\"/%3E%3C/g%3E%3C/svg%3E');">
         </div>
     </div>
 
@@ -872,18 +826,19 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                     </path>
                 </svg>
             </div>
-            <h3 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Apa Kata <span
-                    class="text-emerald-600">Klien Kami</span></h3>
+            <h3 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                {{ __('messages.testimoni_judul') }} <span class="text-emerald-600">{{ __('messages.testimoni_highlight') }}</span>
+            </h3>
             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Dengarkan pengalaman langsung dari mitra dan pelanggan yang telah merasakan manfaat solusi agribisnis
-                kami
+                {{ __('messages.testimoni_deskripsi') }}
             </p>
             <div class="w-24 h-1 bg-emerald-500 rounded-full mx-auto mt-6"></div>
         </div>
 
-        <div id="testi-wrapper" class="relative overflow-hidden ">
+        <div id="testi-wrapper" class="relative overflow-hidden">
             <div id="testi-track" class="flex transition-transform duration-500 ease-out">
 
+                <!-- Testimoni 1 -->
                 <div
                     class="min-w-full testimonial p-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 dark:border-gray-700">
                     <div class="text-amber-500 mb-4">
@@ -893,9 +848,9 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                             </path>
                         </svg>
                     </div>
-                    <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed italic">"Produk benih dari Binco
-                        Indofarm telah meningkatkan hasil panen kami secara signifikan. Dukungan teknis yang responsif
-                        dan solutif membuat kami semakin percaya dengan kualitas layanan mereka."</p>
+                    <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed italic">
+                        {{ __('messages.testimoni_1_isi') }}
+                    </p>
                     <div class="flex items-center gap-4 mt-6">
                         <div class="relative">
                             <img src="{{ $client1Img ?? 'https://picsum.photos/60/60?random=2' }}" alt="client1"
@@ -910,12 +865,17 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                             </div>
                         </div>
                         <div>
-                            <div class="font-bold text-gray-900 dark:text-white text-lg">Pak Santoso</div>
-                            <div class="text-sm text-emerald-600 dark:text-emerald-400">Petani Tembakau, Grobogan</div>
+                            <div class="font-bold text-gray-900 dark:text-white text-lg">
+                                {{ __('messages.testimoni_1_nama') }}
+                            </div>
+                            <div class="text-sm text-emerald-600 dark:text-emerald-400">
+                                {{ __('messages.testimoni_1_jabatan') }}
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Testimoni 2 -->
                 <div
                     class="min-w-full testimonial p-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 dark:border-gray-700">
                     <div class="text-amber-500 mb-4">
@@ -925,9 +885,9 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                             </path>
                         </svg>
                     </div>
-                    <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed italic">"Kerjasama distribusi
-                        dengan Binco Indofarm berjalan sangat lancar. Stok selalu tersedia tepat waktu dan kualitas
-                        produk terjaga konsisten. Mereka adalah mitra bisnis yang andal dan profesional."</p>
+                    <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed italic">
+                        {{ __('messages.testimoni_2_isi') }}
+                    </p>
                     <div class="flex items-center gap-4 mt-6">
                         <div class="relative">
                             <img src="{{ $client2Img ?? 'https://picsum.photos/60/60?random=3' }}" alt="client2"
@@ -942,8 +902,12 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                             </div>
                         </div>
                         <div>
-                            <div class="font-bold text-gray-900 dark:text-white text-lg">PT AgroLog Indonesia</div>
-                            <div class="text-sm text-amber-600 dark:text-amber-400">Distributor Utama</div>
+                            <div class="font-bold text-gray-900 dark:text-white text-lg">
+                                {{ __('messages.testimoni_2_nama') }}
+                            </div>
+                            <div class="text-sm text-amber-600 dark:text-amber-400">
+                                {{ __('messages.testimoni_2_jabatan') }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -982,11 +946,15 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                     </path>
                 </svg>
             </div>
-            <h3 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Galeri <span
-                    class="text-emerald-600">Produk & QC</span></h3>
-            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Dokumentasi proses produksi, quality control, dan produk jadi yang menjamin kualitas terbaik untuk Anda
-            </p>
+                <div class="text-center mb-12">
+                    <h3 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        {{ __('messages.galeri_judul') }}
+                        <span class="text-emerald-600">{{ __('messages.galeri_highlight') }}</span>
+                    </h3>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        {{ __('messages.galeri_deskripsi') }}
+                    </p>
+                </div>
             <div class="w-24 h-1 bg-emerald-500 rounded-full mx-auto mt-6"></div>
         </div>
 
@@ -1024,7 +992,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
-                <img src="{{ asset('/images/galeri/galeri (9).jpg') }}" alt="g3"
+                <img src="{{ asset('/images/galeri/galeri (9).JPG') }}" alt="g3"
                     class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy">
                 {{-- <div
@@ -1038,7 +1006,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
-                <img src="{{ asset('/images/galeri/galeri (10).jpg') }}" alt="g4"
+                <img src="{{ asset('/images/galeri/galeri (10).JPG') }}" alt="g4"
                     class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy">
                 {{-- <div
@@ -1052,7 +1020,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
-                <img src="{{ asset('/images/galeri/galeri (11).jpg') }}" alt="g1"
+                <img src="{{ asset('/images/galeri/galeri (11).JPG') }}" alt="g1"
                     class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy">
                 {{-- <div
@@ -1066,7 +1034,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
-                <img src="{{ asset('/images/galeri/galeri (12).jpg') }}" alt="g2"
+                <img src="{{ asset('/images/galeri/galeri (12).JPG') }}" alt="g2"
                     class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy">
                 {{-- <div
@@ -1080,7 +1048,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
-                <img src="{{ asset('/images/galeri/galeri (13).jpg') }}" alt="g3"
+                <img src="{{ asset('/images/galeri/galeri (13).JPG') }}" alt="g3"
                     class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy">
                 {{-- <div
@@ -1127,11 +1095,9 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                     </path>
                 </svg>
             </div>
-            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Pertanyaan <span
-                    class="text-emerald-600">Yang Sering Diajukan</span></h2>
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">{!! __('messages.faq_title') !!}</h2>
             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Temukan jawaban untuk pertanyaan umum seputar produk, layanan, dan kerjasama dengan PT Binco Ran
-                Indofarm
+                {{ __('messages.faq_description') }}
             </p>
             <div class="w-24 h-1 bg-emerald-500 rounded-full mx-auto mt-6"></div>
         </div>
@@ -1143,8 +1109,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden">
                 <button
                     class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl">
-                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Apa itu PT Binco Ran Indofarm dan
-                        apa fokus bisnisnya?</span>
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.faq_question_1') }}</span>
                     <svg class="w-6 h-6 text-emerald-600 transform group-[.active]:rotate-180 transition-transform duration-300"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -1153,15 +1118,10 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
                     <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-                            PT Binco Ran Indofarm adalah perusahaan agribisnis modern yang berfokus pada pengolahan
-                            sabut kelapa dan penyediaan media tanam alami untuk mendukung pertanian berkelanjutan.
-                            Dengan visi "Smart Agriculture and Sustainable Coconut Innovation", kami mengembangkan
-                            berbagai produk unggulan berbasis serabut kelapa seperti cocopeat, cocopot, dan cocorope.
+                            {{ __('messages.faq_answer_1_part1') }}
                         </p>
                         <p class="mt-3 text-gray-600 dark:text-gray-300 text-justify">
-                            Kami juga memiliki komitmen kuat terhadap ekonomi hijau dengan mengubah limbah kelapa
-                            menjadi produk bernilai tinggi, didukung fasilitas produksi modern, sistem greenhouse
-                            pintar, dan program wisata edukatif.
+                            {{ __('messages.faq_answer_1_part2') }}
                         </p>
                     </div>
                 </div>
@@ -1172,8 +1132,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden">
                 <button
                     class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl">
-                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Apa perbedaan Cocopeat Block dan
-                        Cocopeat Loose yang Anda produksi?</span>
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.faq_question_2') }}</span>
                     <svg class="w-6 h-6 text-emerald-600 transform group-[.active]:rotate-180 transition-transform duration-300"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -1182,13 +1141,12 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
                     <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                            Kami memproduksi dua jenis cocopeat dengan karakteristik dan kegunaan yang berbeda:
+                            {{ __('messages.faq_answer_2_lead') }}
                         </p>
 
                         <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="bg-emerald-50 dark:bg-emerald-900/20 rounded-lg p-4">
-                                <h4 class="font-bold text-emerald-700 dark:text-emerald-400 mb-2">Cocopeat Block (Press
-                                    Block 5 Kg)</h4>
+                                <h4 class="font-bold text-emerald-700 dark:text-emerald-400 mb-2">{{ __('messages.faq_answer_2_block_title') }}</h4>
                                 <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
                                     <li class="flex items-start">
                                         <svg class="w-4 h-4 text-emerald-500 mt-0.5 mr-2 flex-shrink-0"
@@ -1197,7 +1155,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        <span>Tersedia dalam varian Low EC dan High EC</span>
+                                        <span>{{ __('messages.faq_answer_2_block_point1') }}</span>
                                     </li>
                                     <li class="flex items-start">
                                         <svg class="w-4 h-4 text-emerald-500 mt-0.5 mr-2 flex-shrink-0"
@@ -1206,7 +1164,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        <span>Mudah disimpan dan dikembangkan kembali</span>
+                                        <span>{{ __('messages.faq_answer_2_block_point2') }}</span>
                                     </li>
                                     <li class="flex items-start">
                                         <svg class="w-4 h-4 text-emerald-500 mt-0.5 mr-2 flex-shrink-0"
@@ -1215,14 +1173,13 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        <span>Cocok untuk ekspor dan distribusi jarak jauh</span>
+                                        <span>{{ __('messages.faq_answer_2_block_point3') }}</span>
                                     </li>
                                 </ul>
                             </div>
 
                             <div class="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-4">
-                                <h4 class="font-bold text-amber-700 dark:text-amber-400 mb-2">Cocopeat Loose (Bagged)
-                                </h4>
+                                <h4 class="font-bold text-amber-700 dark:text-amber-400 mb-2">{{ __('messages.faq_answer_2_loose_title') }}</h4>
                                 <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
                                     <li class="flex items-start">
                                         <svg class="w-4 h-4 text-amber-500 mt-0.5 mr-2 flex-shrink-0"
@@ -1231,7 +1188,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        <span>Siap pakai tanpa perlu pengembangan</span>
+                                        <span>{{ __('messages.faq_answer_2_loose_point1') }}</span>
                                     </li>
                                     <li class="flex items-start">
                                         <svg class="w-4 h-4 text-amber-500 mt-0.5 mr-2 flex-shrink-0"
@@ -1240,7 +1197,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        <span>Ideal untuk pertanian hidroponik dan tanaman hias</span>
+                                        <span>{{ __('messages.faq_answer_2_loose_point2') }}</span>
                                     </li>
                                     <li class="flex items-start">
                                         <svg class="w-4 h-4 text-amber-500 mt-0.5 mr-2 flex-shrink-0"
@@ -1249,7 +1206,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        <span>Praktis untuk nursery dan penggunaan langsung</span>
+                                        <span>{{ __('messages.faq_answer_2_loose_point3') }}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -1263,8 +1220,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden">
                 <button
                     class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl">
-                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Apa keunggulan produk Cocopeat
-                        dibanding media tanam lainnya?</span>
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.faq_question_3') }}</span>
                     <svg class="w-6 h-6 text-emerald-600 transform group-[.active]:rotate-180 transition-transform duration-300"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -1273,7 +1229,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
                     <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                            Cocopeat memiliki beberapa keunggulan utama dibanding media tanam konvensional:
+                            {{ __('messages.faq_answer_3_lead') }}
                         </p>
                         <ul class="mt-3 space-y-2 text-gray-600 dark:text-gray-300">
                             <li class="flex items-start">
@@ -1283,8 +1239,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span><strong>Daya serap air tinggi</strong> - Dapat menyerap air hingga 8-9 kali
-                                    beratnya dan melepaskannya secara perlahan</span>
+                                <span>{!! __('messages.faq_answer_3_point1') !!}</span>
                             </li>
                             <li class="flex items-start">
                                 <svg class="w-5 h-5 text-emerald-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor"
@@ -1293,8 +1248,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span><strong>100% organik & ramah lingkungan</strong> - Terbuat dari bahan alami dan
-                                    biodegradable</span>
+                                <span>{!! __('messages.faq_answer_3_point2') !!}</span>
                             </li>
                             <li class="flex items-start">
                                 <svg class="w-5 h-5 text-emerald-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor"
@@ -1303,8 +1257,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span><strong>pH netral dan stabil</strong> - Cocok untuk semua jenis tanaman tanpa
-                                    perlu penyesuaian pH</span>
+                                <span>{!! __('messages.faq_answer_3_point3') !!}</span>
                             </li>
                             <li class="flex items-start">
                                 <svg class="w-5 h-5 text-emerald-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor"
@@ -1313,8 +1266,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span><strong>Steril dan bebas patogen</strong> - Tidak mengandung biji gulma, bakteri,
-                                    atau jamur berbahaya</span>
+                                <span>{!! __('messages.faq_answer_3_point4') !!}</span>
                             </li>
                             <li class="flex items-start">
                                 <svg class="w-5 h-5 text-emerald-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor"
@@ -1323,8 +1275,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span><strong>Sirkulasi udara optimal</strong> - Memperkuat sistem perakaran
-                                    tanaman</span>
+                                <span>{!! __('messages.faq_answer_3_point5') !!}</span>
                             </li>
                         </ul>
                     </div>
@@ -1336,8 +1287,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden">
                 <button
                     class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl">
-                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Apa itu Greenhouse Smart Plant dan
-                        Wisata Petik Melon?</span>
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.faq_question_4') }}</span>
                     <svg class="w-6 h-6 text-emerald-600 transform group-[.active]:rotate-180 transition-transform duration-300"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -1346,14 +1296,11 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
                     <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-                            <strong>Greenhouse Smart Plant</strong> adalah sistem pertanian modern yang kami kembangkan
-                            dengan teknologi fertigasi otomatis dan sensor lingkungan digital. Sistem ini memungkinkan
-                            pengelolaan tanaman yang presisi dan efisien.
+                            {!! __('messages.faq_answer_4_part1') !!}
                         </p>
 
                         <div class="mt-4">
-                            <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Program "Wisata Petik Melon &
-                                Edukasi Pertanian"</h4>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-3">{{ __('messages.faq_answer_4_program_title') }}</h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="flex items-start p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
                                     <div
@@ -1366,10 +1313,8 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                         </svg>
                                     </div>
                                     <div>
-                                        <h5 class="font-semibold text-gray-900 dark:text-white">Edukasi Pertanian Modern
-                                        </h5>
-                                        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Belajar sistem tanam
-                                            modern (fertigasi & smart plant)</p>
+                                        <h5 class="font-semibold text-gray-900 dark:text-white">{{ __('messages.faq_answer_4_program1_title') }}</h5>
+                                        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{{ __('messages.faq_answer_4_program1_desc') }}</p>
                                     </div>
                                 </div>
 
@@ -1384,17 +1329,15 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                         </svg>
                                     </div>
                                     <div>
-                                        <h5 class="font-semibold text-gray-900 dark:text-white">Pengalaman Langsung</h5>
-                                        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Memetik melon premium
-                                            langsung dari greenhouse</p>
+                                        <h5 class="font-semibold text-gray-900 dark:text-white">{{ __('messages.faq_answer_4_program2_title') }}</h5>
+                                        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{{ __('messages.faq_answer_4_program2_desc') }}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <p class="mt-4 text-gray-600 dark:text-gray-300">
-                            Program ini terbuka untuk masyarakat umum, pelajar, dan mitra usaha sebagai sarana edukatif,
-                            rekreatif, dan inspiratif tentang pertanian modern.
+                            {{ __('messages.faq_answer_4_part2') }}
                         </p>
                     </div>
                 </div>
@@ -1405,8 +1348,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden">
                 <button
                     class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl">
-                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Bagaimana cara menjadi mitra atau
-                        distributor produk Binco Ran Indofarm?</span>
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.faq_question_5') }}</span>
                     <svg class="w-6 h-6 text-emerald-600 transform group-[.active]:rotate-180 transition-transform duration-300"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -1415,13 +1357,12 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
                     <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                            Kami membuka peluang kemitraan dengan berbagai pihak yang tertarik dengan produk dan visi
-                            kami:
+                            {{ __('messages.faq_answer_5_lead') }}
                         </p>
 
                         <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Jenis Kemitraan</h4>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">{{ __('messages.faq_answer_5_partnership_title') }}</h4>
                                 <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
                                     <li class="flex items-center">
                                         <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
@@ -1430,7 +1371,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        Mitra ekspor & importir media tanam
+                                        {{ __('messages.faq_answer_5_partnership1') }}
                                     </li>
                                     <li class="flex items-center">
                                         <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
@@ -1439,7 +1380,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        Industri pertanian, nursery, dan urban farming
+                                        {{ __('messages.faq_answer_5_partnership2') }}
                                     </li>
                                     <li class="flex items-center">
                                         <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
@@ -1448,7 +1389,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        Hotel, café, dan pusat dekorasi hijau
+                                        {{ __('messages.faq_answer_5_partnership3') }}
                                     </li>
                                     <li class="flex items-center">
                                         <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
@@ -1457,29 +1398,26 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        Institusi pendidikan & lembaga riset
+                                        {{ __('messages.faq_answer_5_partnership4') }}
                                     </li>
                                 </ul>
                             </div>
 
                             <div class="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
-                                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Proses Kemitraan</h4>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">{{ __('messages.faq_answer_5_process_title') }}</h4>
                                 <ol class="text-sm text-gray-600 dark:text-gray-300 space-y-2 list-decimal list-inside">
-                                    <li>Kontak tim marketing kami via WhatsApp/email</li>
-                                    <li>Konsultasi kebutuhan dan potensi kerjasama</li>
-                                    <li>Pengajuan proposal kemitraan</li>
-                                    <li>Kunjungan dan presentasi (jika diperlukan)</li>
-                                    <li>Penandatanganan perjanjian kerjasama</li>
+                                    <li>{{ __('messages.faq_answer_5_step1') }}</li>
+                                    <li>{{ __('messages.faq_answer_5_step2') }}</li>
+                                    <li>{{ __('messages.faq_answer_5_step3') }}</li>
+                                    <li>{{ __('messages.faq_answer_5_step4') }}</li>
+                                    <li>{{ __('messages.faq_answer_5_step5') }}</li>
                                 </ol>
                             </div>
                         </div>
 
                         <div class="mt-4 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
                             <p class="text-sm text-gray-600 dark:text-gray-300">
-                                <strong>Informasi Kontak:</strong><br>
-                                WhatsApp/Telp: +62 898-5531-212<br>
-                                Email: bincoranindofarm@gmail.com<br>
-                                Alamat: Jl. Suruh, Kayuapak, Kec. Polokarto, Kab. Sukoharjo, Jawa Tengah 57555
+                                {!! __('messages.faq_answer_5_contact') !!}
                             </p>
                         </div>
                     </div>
@@ -1491,8 +1429,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden">
                 <button
                     class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl">
-                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Produk turunan apa saja yang
-                        dihasilkan dari pengolahan sabut kelapa?</span>
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.faq_question_6') }}</span>
                     <svg class="w-6 h-6 text-emerald-600 transform group-[.active]:rotate-180 transition-transform duration-300"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -1501,14 +1438,12 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
                     <div class="px-6 pb-6 pt-2 border-t border-gray-100 dark:border-gray-700">
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                            Selain produk utama (Cocopeat, Cocopot, Cocorope), kami juga memproduksi berbagai produk
-                            turunan bernilai tinggi dari sabut kelapa:
+                            {{ __('messages.faq_answer_6_lead') }}
                         </p>
 
                         <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Produk Media Tanam &
-                                    Pertanian</h4>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">{{ __('messages.faq_answer_6_agriculture_title') }}</h4>
                                 <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
                                     <li class="flex items-center">
                                         <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
@@ -1517,7 +1452,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        Cocomat (matras serabut kelapa)
+                                        {{ __('messages.faq_answer_6_agriculture1') }}
                                     </li>
                                     <li class="flex items-center">
                                         <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
@@ -1526,7 +1461,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        Sekam bakar (media tanam tambahan)
+                                        {{ __('messages.faq_answer_6_agriculture2') }}
                                     </li>
                                     <li class="flex items-center">
                                         <svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor"
@@ -1535,14 +1470,13 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        Kohe (pupuk kandang fermentasi)
+                                        {{ __('messages.faq_answer_6_agriculture3') }}
                                     </li>
                                 </ul>
                             </div>
 
                             <div class="p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
-                                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Produk Rumah Tangga &
-                                    Industri</h4>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">{{ __('messages.faq_answer_6_household_title') }}</h4>
                                 <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
                                     <li class="flex items-center">
                                         <svg class="w-4 h-4 text-amber-500 mr-2" fill="currentColor"
@@ -1551,7 +1485,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        Keset serabut kelapa
+                                        {{ __('messages.faq_answer_6_household1') }}
                                     </li>
                                     <li class="flex items-center">
                                         <svg class="w-4 h-4 text-amber-500 mr-2" fill="currentColor"
@@ -1560,7 +1494,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        Sikat dan kuas cocobristle
+                                        {{ __('messages.faq_answer_6_household2') }}
                                     </li>
                                     <li class="flex items-center">
                                         <svg class="w-4 h-4 text-amber-500 mr-2" fill="currentColor"
@@ -1569,15 +1503,14 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                                 clip-rule="evenodd"></path>
                                         </svg>
-                                        Kemoceng teleskopik
+                                        {{ __('messages.faq_answer_6_household3') }}
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
                         <p class="mt-4 text-gray-600 dark:text-gray-300">
-                            Semua produk ini merupakan bagian dari komitmen kami untuk menghadirkan solusi ramah
-                            lingkungan dari hulu ke hilir dan mendukung circular economy.
+                            {{ __('messages.faq_answer_6_conclusion') }}
                         </p>
                     </div>
                 </div>
@@ -1587,7 +1520,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
         <!-- CTA Section -->
         <div class="mt-12 text-center">
             <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                Masih ada pertanyaan lain? Jangan ragu untuk menghubungi kami
+                {{ __('messages.faq_cta_text') }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://wa.me/628985531212" target="_blank"
@@ -1596,7 +1529,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.262-6.189-3.553-8.436" />
                     </svg>
-                    Hubungi WhatsApp
+                    {{ __('messages.faq_cta_whatsapp') }}
                 </a>
                 <a href="mailto:bincoranindofarm@gmail.com"
                     class="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-600">
@@ -1605,13 +1538,12 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                         </path>
                     </svg>
-                    Kirim Email
+                    {{ __('messages.faq_cta_email') }}
                 </a>
             </div>
         </div>
     </div>
 </section>
-
 @endsection
 
 @push('scripts')
