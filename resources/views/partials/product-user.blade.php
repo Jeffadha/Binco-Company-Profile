@@ -27,8 +27,20 @@
             </div>
 
             <div class="mt-auto pt-4 flex items-center justify-between">
-                <span class="text-emerald-600 font-bold text-lg dark:text-emerald-400">Rp {{
-                    number_format($product->price, 0, ',', '.') }}</span>
+                {{-- <span class="text-emerald-600 font-bold text-lg dark:text-emerald-400">Rp {{
+                    number_format($product->price, 0, ',', '.') }}</span> --}}
+
+                <div>
+                    <span class="text-emerald-600 font-bold text-base md:text-lg dark:text-emerald-400 block">
+                        Rp {{ number_format($product->price, 0, ',', '.') }}
+                    </span>
+
+                    @if (isset($usd_rate) && $usd_rate > 0)
+                    <span class="text-gray-500 text-md dark:text-gray-400 font-semibold">
+                        $ {{ number_format($product->price / $usd_rate, 2, '.', ',') }}
+                    </span>
+                    @endif
+                </div>
 
                 <button
                     class="add-to-cart-btn bg-emerald-500 text-white p-2 rounded-lg hover:bg-emerald-600 transition-colors sm:px-4 sm:py-2">

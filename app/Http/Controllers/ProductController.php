@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cache;
 
 class ProductController extends Controller
 {
@@ -107,6 +109,34 @@ class ProductController extends Controller
             $query->where('category_id', $category);
         }
 
+        $usd_rate = Cache::remember('usd_to_idr_rate', now()->addHours(6), function () {
+            try {
+                $apiKey = env('EXCHANGERATE_API_KEY');
+
+                // Jika API key tidak di-set, gunakan nilai fallback
+                if (!$apiKey) {
+                    Log::warning('EXCHANGERATE_API_KEY not set. Using fallback rate.');
+                    return 15500; // Nilai fallback
+                }
+
+                // Panggil API menggunakan Laravel HTTP Client
+                $response = Http::get("https://v6.exchangerate-api.com/v6/{$apiKey}/latest/USD");
+
+                if ($response->successful()) {
+                    // Ambil kurs IDR dari respons JSON
+                    return (float) $response->json()['conversion_rates']['IDR'];
+                } else {
+                    // Jika API gagal (misal: key salah, server down)
+                    Log::error('Failed to fetch exchange rate. API response: ' . $response->body());
+                    return 15500; // Nilai fallback
+                }
+            } catch (\Exception $e) {
+                // Jika ada error koneksi atau lainnya
+                Log::error('Error fetching exchange rate: ' . $e->getMessage());
+                return 15500; // Nilai fallback
+            }
+        });
+
         $sort = request('sort', 'newest');
         if ($sort == 'price_low') $query->orderBy('price', 'asc');
         elseif ($sort == 'price_high') $query->orderBy('price', 'desc');
@@ -114,7 +144,7 @@ class ProductController extends Controller
 
         $products = $query->paginate(12)->withQueryString();
 
-        return view('landing.product-page', compact('categories', 'products'));
+        return view('landing.product-page', compact('categories', 'products', 'usd_rate'));
     }
 
     public function showJson(Product $product)
