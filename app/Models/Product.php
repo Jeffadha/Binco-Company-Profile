@@ -25,7 +25,8 @@ class Product extends Model
     protected $casts = [
         'price' => 'decimal:2',
         'is_active' => 'boolean',
-        'stock' => 'integer'
+        'stock' => 'integer',
+        'image' => 'array'
     ];
 
     /**
@@ -46,31 +47,45 @@ class Product extends Model
 
     /**
      * Get primary image from image array.
-     * 
+     *
      * @return string|null
      */
+    // public function getPrimaryImage()
+    // {
+    //     if (!$this->image) {
+    //         return null;
+    //     }
+
+    //     return is_array($this->image) ? $this->image[0] : $this->image;
+    // }
+
     public function getPrimaryImage()
     {
-        if (!$this->image) {
+        if (empty($this->image) || !is_array($this->image)) {
             return null;
-        }
+        };
 
-        return is_array($this->image) ? $this->image[0] : $this->image;
+        return $this->image[0];
     }
 
     /**
      * Get all images for the product.
-     * 
+     *
      * @return array
      */
+    // public function getAllImages()
+    // {
+    //     return is_array($this->image) ? $this->image : [$this->image];
+    // }
+
     public function getAllImages()
     {
-        return is_array($this->image) ? $this->image : [$this->image];
+        return $this->image ?? [];
     }
 
     /**
      * Get the route key for the model.
-     * 
+     *
      * @return string
      */
     public function getRouteKeyName()
@@ -104,7 +119,7 @@ class Product extends Model
 
     /**
      * Format price to rupiah
-     * 
+     *
      * @return string
      */
     public function getFormattedPriceAttribute()
@@ -114,52 +129,86 @@ class Product extends Model
 
     /**
      * Check if product has specific image
-     * 
+     *
      * @param string $imagePath
      * @return bool
      */
-    public function hasImage(string $imagePath): bool
+    // public function hasImage(string $imagePath): bool
+    // {
+    //     return in_array($imagePath, $this->getAllImages());
+    // }
+
+    public function containsImage(string $imagePath): bool // ⬅️ GANTI DARI 'hasImage'
     {
         return in_array($imagePath, $this->getAllImages());
     }
 
     /**
      * Add new image to product
-     * 
+     *
      * @param string $imagePath
      * @return void
      */
+    // public function addImage(string $imagePath): void
+    // {
+    //     $images = $this->getAllImages();
+    //     $images[] = $imagePath;
+    //     $this->image = array_unique($images);
+    //     $this->save();
+    // }
+
     public function addImage(string $imagePath): void
     {
         $images = $this->getAllImages();
-        $images[] = $imagePath;
-        $this->image = array_unique($images);
-        $this->save();
+        if (!in_array($imagePath, $images)) {
+            $images[] = $imagePath;
+        }
+        $this->image = $images;
     }
 
     /**
      * Remove image from product
-     * 
+     *
      * @param string $imagePath
      * @return void
      */
+    // public function removeImage(string $imagePath): void
+    // {
+    //     $images = $this->getAllImages();
+    //     $this->image = array_values(array_diff($images, [$imagePath]));
+    //     $this->save();
+    // }
+
     public function removeImage(string $imagePath): void
     {
         $images = $this->getAllImages();
         $this->image = array_values(array_diff($images, [$imagePath]));
-        $this->save();
     }
 
     /**
      * Set primary image for product
-     * 
+     *
      * @param string $imagePath
      * @return void
      */
+    // public function setPrimaryImage(string $imagePath): void
+    // {
+    //     if (!$this->hasImage($imagePath)) {
+    //         return;
+    //     }
+
+    //     $images = $this->getAllImages();
+    //     $key = array_search($imagePath, $images);
+    //     unset($images[$key]);
+    //     array_unshift($images, $imagePath);
+    //     $this->image = array_values($images);
+    //     $this->save();
+    // }
+
     public function setPrimaryImage(string $imagePath): void
     {
-        if (!$this->hasImage($imagePath)) {
-            return;
+        if (!$this->containsImage($imagePath)) {
+            $this->addImage($imagePath);
         }
 
         $images = $this->getAllImages();
@@ -167,6 +216,5 @@ class Product extends Model
         unset($images[$key]);
         array_unshift($images, $imagePath);
         $this->image = array_values($images);
-        $this->save();
     }
 }

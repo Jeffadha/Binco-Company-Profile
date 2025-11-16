@@ -3,17 +3,19 @@
     x-data="{ darkMode: localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches }"
     x-init="$watch('darkMode', val => localStorage.setItem('theme', val ? 'dark' : 'light'))"
     :class="{'dark': darkMode}">
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'id',
-                includedLanguages: 'id,en',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'id',
+            includedLanguages: 'id,en',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -31,36 +33,38 @@
         .brand-green {
             color: #16a34a !important;
         }
-        
+
         /* Fix untuk safe area dan header fixed */
         :root {
-            --header-height: 5rem; /* 80px */
-            --header-height-mobile: 3rem; /* 80px */
+            --header-height: 5rem;
+            /* 80px */
+            --header-height-mobile: 3rem;
+            /* 80px */
         }
-        
+
         /* Pastikan body tidak memiliki padding/margin default */
         body {
             margin: 0;
             padding: 0;
         }
-        
+
         /* Main content harus mulai setelah header */
         .main-content {
             min-height: calc(100vh - var(--header-height));
             padding-top: var(--header-height);
         }
-        
+
         /* Untuk mobile, gunakan env(safe-area-inset-top) */
         @supports(padding: max(0px)) {
             .header-safe {
                 padding-top: env(safe-area-inset-top);
             }
-            
+
             .main-content {
                 padding-top: calc(var(--header-height-mobile) + env(safe-area-inset-top));
             }
         }
-        
+
         /* Fallback untuk browser yang tidak support env() */
         @media (max-width: 768px) {
             .main-content {
@@ -76,7 +80,7 @@
     <!-- Navigation -->
     <header class="bg-white dark:bg-black shadow-sm fixed w-full top-0 z-50 transition-colors duration-300 header-safe"
         x-data="{ mobileMenuOpen: false }" style="height: var(--header-height);">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <nav class="max-w-[700px] mx-auto px-4 sm:px-6 lg:px-8 h-full">
             <div class="flex items-center justify-between h-full">
                 <!-- [Kode logo dan navigation sama seperti sebelumnya] -->
                 <!-- Logo -->
@@ -100,13 +104,14 @@
                             </svg>
                         </div>
                         @endif
-                        
+
                         <div class="ml-3 flex flex-col">
                             <span class="text-xl font-bold text-gray-900 dark:text-white leading-tight">
                                 Binco Ran <span class="text-emerald-600 dark:text-emerald-400">Indofarm</span>
                             </span>
-                            <span class="text-xs text-gray-600 dark:text-gray-300 font-medium mt-0.5 leading-tight tracking-wide">
-                                Eco-Green Products & Smart Farming Innovation
+                            <span
+                                class="text-xs text-gray-600 dark:text-gray-300 font-medium mt-0.5 leading-tight tracking-wide">
+                                Nature Number One Friend
                             </span>
                         </div>
                     </a>
@@ -115,29 +120,38 @@
                 <!-- Navigation Links (Desktop) -->
                 <div class="hidden sm:flex items-center space-x-8">
                     <a href="/"
-                        class="{{ Request::is('/') ? 'text-emerald-500 dark:text-white' : 'text-gray-600 dark:text-gray-300' }} hover:text-slate-900 dark:hover:text-white transition-all duration-300 font-semibold">{{ __('messages.home') }}</a>
+                        class="{{ Request::is('/') ? 'text-emerald-500 dark:text-white' : 'text-gray-600 dark:text-gray-300' }} hover:text-slate-900 dark:hover:text-white transition-all duration-300 text-md font-semibold">{{
+                        __('messages.home') }}</a>
                     <a href="{{ route('about') }}"
-                        class="{{ Request::is('about') ? 'text-emerald-500 dark:text-white' : 'text-gray-600 dark:text-gray-300' }} hover:text-slate-900 dark:hover:text-white transition-all duration-300 font-semibold">{{ __('messages.about_us') }}</a>
+                        class="{{ Request::is('about') ? 'text-emerald-500 dark:text-white' : 'text-gray-600 dark:text-gray-300' }} hover:text-slate-900 dark:hover:text-white transition-all duration-300 text-md font-semibold">{{
+                        __('messages.about_us') }}</a>
                     <a href="{{ route('product') }}"
-                        class="{{ Request::is('product') ? 'text-emerald-500 dark:text-white' : 'text-gray-600 dark:text-gray-300' }} hover:text-slate-900 dark:hover:text-white transition-all duration-300 font-semibold">{{ __('messages.products') }}</a>
+                        class="{{ Request::is('product') ? 'text-emerald-500 dark:text-white' : 'text-gray-600 dark:text-gray-300' }} hover:text-slate-900 dark:hover:text-white transition-all duration-300 text-md font-semibold">{{
+                        __('messages.products') }}</a>
+                    <a href="{{ route('partnership') }}"
+                        class="{{ Request::is('partnership') ? 'text-emerald-500 dark:text-white' : 'text-gray-600 dark:text-gray-300' }} hover:text-slate-900 dark:hover:text-white transition-all duration-300 text-md font-semibold">{{
+                        __('messages.partnership') }}</a>
                     <a href="{{ route('blogs') }}"
-                        class="{{ Request::is('blogs') ? 'text-emerald-500 dark:text-white' : 'text-gray-600 dark:text-gray-300' }} hover:text-slate-900 dark:hover:text-white transition-all duration-300 font-semibold">{{ __('messages.blogs') }}</a>
+                        class="{{ Request::is('blogs') ? 'text-emerald-500 dark:text-white' : 'text-gray-600 dark:text-gray-300' }} hover:text-slate-900 dark:hover:text-white transition-all duration-300 text-md font-semibold">{{
+                        __('messages.blogs') }}</a>
                     <a href="{{ route('contact') }}"
-                        class="{{ Request::is('contact') ? 'text-emerald-500 dark:text-white' : 'text-gray-600 dark:text-gray-300' }} hover:text-slate-900 dark:hover:text-white transition-all duration-300 font-semibold">{{ __('messages.contact_us') }}</a>
+                        class="{{ Request::is('contact') ? 'text-emerald-500 dark:text-white' : 'text-gray-600 dark:text-gray-300' }} hover:text-slate-900 dark:hover:text-white transition-all duration-300 text-md font-semibold">{{
+                        __('messages.contact_us') }}</a>
                 </div>
 
                 <!-- Search & Auth (Desktop) + Hamburger Button (Mobile) -->
                 <div class="flex items-center space-x-6">
                     <!-- Language Switcher (Desktop) -->
                     <div class="hidden sm:flex items-center space-x-3">
-                        <div class="bg-gray-100 dark:bg-gray-800 rounded-xl p-1.5 border border-gray-200 dark:border-gray-700">
+                        <div
+                            class="bg-gray-100 dark:bg-gray-800 rounded-xl p-1.5 border border-gray-200 dark:border-gray-700">
                             <div class="flex items-center space-x-1">
-                                <a href="{{ route('set-locale', 'id') }}" 
+                                <a href="{{ route('set-locale', 'id') }}"
                                     class="px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 min-w-[50px] text-center {{ app()->getLocale() == 'id' ? 'bg-white dark:bg-gray-700 text-emerald-600 dark:text-emerald-400 shadow-sm border border-gray-300 dark:border-gray-600' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700' }}">
                                     ID
                                 </a>
                                 <div class="w-px h-4 bg-gray-300 dark:bg-gray-600 mx-1"></div>
-                                <a href="{{ route('set-locale', 'en') }}" 
+                                <a href="{{ route('set-locale', 'en') }}"
                                     class="px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 min-w-[50px] text-center {{ app()->getLocale() == 'en' ? 'bg-white dark:bg-gray-700 text-emerald-600 dark:text-emerald-400 shadow-sm border border-gray-300 dark:border-gray-600' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700' }}">
                                     EN
                                 </a>
@@ -180,9 +194,11 @@
                         <!-- Auth Links -->
                         @guest
                         <a href="{{ route('login') }}"
-                            class="text-gray-600 dark:text-gray-300 hover:text-emerald-500 transition-all duration-200 font-semibold">{{ __('messages.login') }}</a>
+                            class="text-gray-600 dark:text-gray-300 hover:text-emerald-500 transition-all duration-200 font-semibold">{{
+                            __('messages.login') }}</a>
                         <a href="{{ route('register') }}"
-                            class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-lg hover:opacity-90 transition-all duration-200 font-semibold">{{ __('messages.register') }}</a>
+                            class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-lg hover:opacity-90 transition-all duration-200 font-semibold">{{
+                            __('messages.register') }}</a>
                         @else
                         <div x-data="{ open: false }" class="relative">
                             <button @click="open = !open"
@@ -277,6 +293,17 @@
                     <span class="text-lg">{{ __('messages.products') }}</span>
                 </a>
 
+                <a href="{{ route('partnership') }}"
+                    class="flex items-center px-4 py-3 rounded-xl text-base font-medium {{ Request::is('partnership') ? 'text-emerald-500 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20' : 'text-gray-700 dark:text-white' }} hover:text-emerald-500 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-150">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6 mr-4">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                    </svg>
+
+                    <span class="text-lg">{{ __('messages.partnership') }}</span>
+                </a>
+
                 <a href="{{ route('blogs') }}"
                     class="flex items-center px-4 py-3 rounded-xl text-base font-medium {{ Request::is('blogs') ? 'text-emerald-500 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20' : 'text-gray-700 dark:text-white' }} hover:text-emerald-500 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-150">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -304,12 +331,12 @@
             <div class="px-6 py-4">
                 <div class="bg-gray-100 dark:bg-gray-800 rounded-xl p-2 border border-gray-200 dark:border-gray-700">
                     <div class="flex items-center justify-between space-x-2">
-                        <a href="{{ route('set-locale', 'id') }}" 
+                        <a href="{{ route('set-locale', 'id') }}"
                             class="flex-1 px-4 py-3 text-base font-semibold rounded-lg text-center transition-all duration-200 {{ app()->getLocale() == 'id' ? 'bg-white dark:bg-gray-700 text-emerald-600 dark:text-emerald-400 shadow-sm border border-gray-300 dark:border-gray-600' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700' }}">
                             Bahasa Indonesia
                         </a>
                         <div class="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1"></div>
-                        <a href="{{ route('set-locale', 'en') }}" 
+                        <a href="{{ route('set-locale', 'en') }}"
                             class="flex-1 px-4 py-3 text-base font-semibold rounded-lg text-center transition-all duration-200 {{ app()->getLocale() == 'en' ? 'bg-white dark:bg-gray-700 text-emerald-600 dark:text-emerald-400 shadow-sm border border-gray-300 dark:border-gray-600' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700' }}">
                             English
                         </a>
@@ -363,7 +390,8 @@
                 </a>
                 @else
                 <div class="flex items-center px-4 py-2">
-                    <span class="text-lg font-medium text-gray-700 dark:text-white">{{ __('messages.welcome') }} {{ Auth::user()->name }}</span>
+                    <span class="text-lg font-medium text-gray-700 dark:text-white">{{ __('messages.welcome') }} {{
+                        Auth::user()->name }}</span>
                 </div>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -414,12 +442,14 @@
                 <div>
                     <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">Quick Links
                     </h3>
-                    <a href="/" class="block text-gray-500 dark:text-gray-400 hover:text-emerald-500 mt-2">{{ __('messages.home') }}</a>
-                    <a href="/about" class="block text-gray-500 dark:text-gray-400 hover:text-emerald-500 mt-2">{{ __('messages.about_us') }}</a>
-                    <a href="/products"
-                        class="block text-gray-500 dark:text-gray-400 hover:text-emerald-500 mt-2">{{ __('messages.products') }}</a>
-                    <a href="/contact"
-                        class="block text-gray-500 dark:text-gray-400 hover:text-emerald-500 mt-2">{{ __('messages.contact_us') }}</a>
+                    <a href="/" class="block text-gray-500 dark:text-gray-400 hover:text-emerald-500 mt-2">{{
+                        __('messages.home') }}</a>
+                    <a href="/about" class="block text-gray-500 dark:text-gray-400 hover:text-emerald-500 mt-2">{{
+                        __('messages.about_us') }}</a>
+                    <a href="/products" class="block text-gray-500 dark:text-gray-400 hover:text-emerald-500 mt-2">{{
+                        __('messages.products') }}</a>
+                    <a href="/contact" class="block text-gray-500 dark:text-gray-400 hover:text-emerald-500 mt-2">{{
+                        __('messages.contact_us') }}</a>
                 </div>
 
                 <!-- Contact -->
@@ -475,4 +505,5 @@
     <script src="{{ asset('js/app.js') }}"></script>
     @stack('scripts')
 </body>
+
 </html>

@@ -94,6 +94,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
             </div>
 
             <h1 class="text-4xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                <span class="block uppercase">{{ __('messages.hero_title_0') }}</span>
                 <span class="block uppercase">{{ __('messages.hero_title_1') }}</span>
                 <span class="block uppercase">{{ __('messages.hero_title_2') }}</span>
                 <span class="block text-emerald-400 mt-2 uppercase font-extrabold">

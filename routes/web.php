@@ -35,6 +35,7 @@ Route::get('/blogs', [CompanyProfileController::class, "blogPage"])->name('blogs
 Route::get('/blog/{slug}', [CompanyProfileController::class, 'showblog'])->name('blog.show');
 Route::get('/contact', [CompanyProfileController::class, "contactPage"])->name('contact');
 Route::get('/product', [ProductController::class, "productPage"])->name('product');
+Route::get('/partnership', [CompanyProfileController::class, "partnershipPage"])->name('partnership');
 
 
 //Auth Routes

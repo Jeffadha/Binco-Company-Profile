@@ -42,10 +42,8 @@
                         @forelse($products as $product)
                         <tr>
                             <td>
-                                {{-- Gunakan method getPrimaryImage() --}}
-                                <img src="{{ $product->getPrimaryImage() ?? 'https://via.placeholder.com/50' }}"
-                                    alt="{{ $product['name'] }}" class="img-thumbnail"
-                                    style="max-width: 50px; height: 50px; object-fit: cover;">
+                                <img src="{{ $product['image'] }}" alt="{{ $product['name'] }}" class="img-thumbnail"
+                                    style="max-width: 50px;">
                             </td>
                             <td>{{ $product['name'] }}</td>
                             <td>{{ $product->category->name ?? 'No Category' }}</td>
@@ -94,7 +92,7 @@
         aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title" id="addProductModalLabel">Add Product</h5>
@@ -155,47 +153,13 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="image" class="form-label">Product Image (Main) *</label>
+                            <label for="image" class="form-label">Product Image *</label>
                             <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
                                 accept="image/*" required>
                             @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Current Additional Images</label>
-                            <div class="d-flex flex-wrap gap-2 p-2 border rounded" style="min-height: 80px;">
-
-                                @php $allImages = $product->getAllImages(); @endphp
-
-                                @if(count($allImages) <= 1) <p class="text-muted small mb-0 align-self-center">Tidak ada
-                                    gambar tambahan.</p>
-                                    @else
-                                    @foreach ($allImages as $index => $imgData)
-                                    @if ($index == 0) @continue @endif
-
-                                    <div class="position-relative text-center">
-                                        <img src="{{ $imgData }}" class="img-thumbnail"
-                                            style="height: 80px; width: 80px; object-fit: cover;">
-
-                                        <div class="form-check position-absolute top-0 end-0" style="padding-left: 0;">
-
-                                            <input class="form-check-input" type="checkbox" name="delete_images[]"
-                                                value="{{ $imgData }}" id="delete_img_{{ $product->id }}_{{ $index }}">
-
-                                            <label class="form-check-label bg-danger text-white px-1 rounded-sm"
-                                                for="delete_img_{{ $product->id }}_{{ $index }}"
-                                                style="cursor:pointer; font-size: 0.7rem;">
-                                                Hapus
-                                            </label>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                    @endif
-                            </div>
-                        </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -278,69 +242,18 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="image" class="form-label">Product Image (Main)</label>
+                            <label for="image" class="form-label">Product Image</label>
                             <div class="mb-2">
-                                <img src="{{ $product->getPrimaryImage() ?? 'https://via.placeholder.com/100' }}"
-                                    alt="Current Image" class="img-thumbnail" style="max-height: 100px;">
+                                <img src="{{ $product['image'] }}" alt="Current Image" class="img-thumbnail"
+                                    style="max-height: 100px;">
                             </div>
                             <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
                                 accept="image/*">
-                            <small class="text-muted">Biarkan kosong untuk tetap memakai gambar utama saat ini</small>
+                            <small class="text-muted">Leave empty to keep current image</small>
                             @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Current Additional Images</label>
-                            <div class="d-flex flex-wrap gap-2 p-2 border rounded" style="min-height: 80px;">
-
-                                {{-- 1. Panggil method yang benar dari Model Anda --}}
-                                @php $allImages = $product->getAllImages(); @endphp
-
-                                {{-- 2. Cek apakah ada gambar tambahan (lebih dari 1) --}}
-                                @if(count($allImages) <= 1) <p class="text-muted small mb-0 align-self-center">Tidak ada
-                                    gambar tambahan.</p>
-                                    @else
-                                    {{-- 3. Loop semua gambar dan gunakan $index --}}
-                                    @foreach ($allImages as $index => $imgData)
-
-                                    {{-- 4. Lewati gambar pertama (karena itu gambar utama) --}}
-                                    @if ($index == 0) @continue @endif
-
-                                    <div class="position-relative text-center">
-                                        {{-- 5. Gunakan $imgData (string) langsung sebagai src --}}
-                                        <img src="{{ $imgData }}" class="img-thumbnail"
-                                            style="height: 80px; width: 80px; object-fit: cover;">
-
-                                        <div class="form-check position-absolute top-0 end-0" style="padding-left: 0;">
-                                            {{-- 6. Value-nya adalah string base64 ($imgData) untuk dikirim ke
-                                            controller --}}
-                                            <input class="form-check-input" type="checkbox" name="delete_images[]"
-                                                value="{{ $imgData }}" id="delete_img_{{ $product->id }}_{{ $index }}">
-
-                                            <label class="form-check-label bg-danger text-white px-1 rounded-sm"
-                                                for="delete_img_{{ $product->id }}_{{ $index }}"
-                                                style="cursor:pointer; font-size: 0.7rem;">
-                                                Hapus
-                                            </label>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                    @endif
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="images" class="form-label">Add More Additional Images</label>
-                            <input type="file" class="form-control @error('images.*') is-invalid @enderror"
-                                name="images[]" accept="image/*" multiple>
-                            <small class="text-muted">Pilih gambar baru untuk ditambahkan</small>
-                            @error('images.*')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

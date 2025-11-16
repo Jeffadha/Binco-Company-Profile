@@ -16,10 +16,39 @@ class ProductController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $products = Product::paginate(10);
+        // $products = Product::paginate(10);
+        $products = Product::with('category')->paginate(10);
 
         return view('admin.product', compact('products', 'categories'));
     }
+
+    // public function store(Request $request)
+    // {
+    //     try {
+    //         DB::beginTransaction();
+    //         $validated = $request->validate([
+    //             'name' => ['required', 'string', 'max:255'],
+    //             'description' => ['required', 'string', 'max:255'],
+    //             'price' => ['required', 'numeric'],
+    //             'image' => ['required', 'image', 'max:2048'],
+    //             'stock' => ['required', 'numeric'],
+    //             'category_id' => ['required', 'exists:categories,id'],
+    //         ],);
+
+    //         $image = $request->file('image');
+    //         $imageBase64 = base64_encode(file_get_contents($image->getRealPath()));
+    //         $validated['image'] = 'data:' . $image->getMimeType() . ';base64,' . $imageBase64;
+
+    //         Product::create($validated);
+    //         DB::commit();
+    //         return redirect()->back()
+    //             ->with('success', 'Product created successfully');
+    //     } catch (Exception $e) {
+    //         DB::rollBack();
+    //         return redirect()->back()
+    //             ->with('error', 'Product not created');
+    //     }
+    // }
 
     public function store(Request $request)
     {
@@ -29,14 +58,33 @@ class ProductController extends Controller
                 'name' => ['required', 'string', 'max:255'],
                 'description' => ['required', 'string', 'max:255'],
                 'price' => ['required', 'numeric'],
-                'image' => ['required', 'image', 'max:2048'],
+                'image' => ['required', 'image', 'max:2048'], // Gambar Utama
                 'stock' => ['required', 'numeric'],
                 'category_id' => ['required', 'exists:categories,id'],
-            ],);
+                'images' => ['nullable', 'array'],
+                'images.*' => ['image', 'max:2048']
+            ]);
 
+            // Buat array untuk semua gambar
+            $allImages = [];
+
+            // 1. Proses Gambar Utama (WAJIB ADA)
             $image = $request->file('image');
             $imageBase64 = base64_encode(file_get_contents($image->getRealPath()));
-            $validated['image'] = 'data:' . $image->getMimeType() . ';base64,' . $imageBase64;
+            $allImages[] = 'data:' . $image->getMimeType() . ';base64,' . $imageBase64;
+
+            // 2. Proses Gambar Tambahan (Opsional)
+            if ($request->hasFile('images')) {
+                foreach ($request->file('images') as $additionalImageFile) {
+                    $imageBase64 = base64_encode(file_get_contents($additionalImageFile->getRealPath()));
+                    $allImages[] = 'data:' . $additionalImageFile->getMimeType() . ';base64,' . $imageBase64;
+                }
+            }
+
+            // 3. Masukkan array gambar ke data validasi
+            $validated['image'] = $allImages;
+            // Hapus 'images' karena sudah digabung
+            unset($validated['images']);
 
             Product::create($validated);
             DB::commit();
@@ -44,10 +92,41 @@ class ProductController extends Controller
                 ->with('success', 'Product created successfully');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Error storing product: ' . $e->getMessage());
             return redirect()->back()
-                ->with('error', 'Product not created');
+                ->with('error', 'Product not created: ' . $e->getMessage());
         }
     }
+
+    // public function update(Request $request, Product $product)
+    // {
+    //     try {
+    //         DB::beginTransaction();
+    //         $validated = $request->validate([
+    //             'name' => ['required', 'string', 'max:255'],
+    //             'description' => ['required', 'string', 'max:255'],
+    //             'price' => ['required', 'numeric'],
+    //             'stock' => ['required', 'numeric'],
+    //             'image' => ['nullable', 'image', 'max:2048'],
+    //             'category_id' => ['required', 'exists:categories,id'],
+    //         ],);
+
+    //         if ($request->hasFile('image')) {
+    //             $image = $request->file('image');
+    //             $imageBase64 = base64_encode(file_get_contents($image->getRealPath()));
+    //             $validated['image'] = 'data:' . $image->getMimeType() . ';base64,' . $imageBase64;
+    //         }
+
+    //         $product->update($validated);
+    //         DB::commit();
+    //         return redirect()->back()
+    //             ->with('success', 'Product updated successfully');
+    //     } catch (Exception $e) {
+    //         DB::rollBack();
+    //         return redirect()->back()
+    //             ->with('error', 'Product not updated');
+    //     }
+    // }
 
     public function update(Request $request, Product $product)
     {
@@ -58,24 +137,52 @@ class ProductController extends Controller
                 'description' => ['required', 'string', 'max:255'],
                 'price' => ['required', 'numeric'],
                 'stock' => ['required', 'numeric'],
-                'image' => ['nullable', 'image', 'max:2048'],
+                'image' => ['nullable', 'image', 'max:2048'], // Ganti gambar utama
                 'category_id' => ['required', 'exists:categories,id'],
-            ],);
+                'images' => ['nullable', 'array'], // Tambah gambar baru
+                'images.*' => ['image', 'max:2048'],
+                'delete_images' => ['nullable', 'array'], // ⬅️ Hapus gambar
+                'delete_images.*' => ['string'] // Ini akan berisi string base64
+            ]);
 
+            // 1. Update semua data non-gambar
+            $product->update($request->except(['image', 'images', 'delete_images']));
+
+            // 2. Hapus gambar yang dicentang
+            if ($request->has('delete_images')) {
+                foreach ($request->delete_images as $imageToDelete) {
+                    $product->removeImage($imageToDelete); // Panggil method model (tanpa save)
+                }
+            }
+
+            // 3. Tambah gambar baru
+            if ($request->hasFile('images')) {
+                foreach ($request->file('images') as $additionalImageFile) {
+                    $imageBase64 = base64_encode(file_get_contents($additionalImageFile->getRealPath()));
+                    $imageData = 'data:' . $additionalImageFile->getMimeType() . ';base64,' . $imageBase64;
+                    $product->addImage($imageData); // Panggil method model (tanpa save)
+                }
+            }
+
+            // 4. Ganti gambar utama (jika ada)
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $imageBase64 = base64_encode(file_get_contents($image->getRealPath()));
-                $validated['image'] = 'data:' . $image->getMimeType() . ';base64,' . $imageBase64;
+                $imageData = 'data:' . $image->getMimeType() . ';base64,' . $imageBase64;
+                $product->setPrimaryImage($imageData); // Panggil method model (tanpa save)
             }
 
-            $product->update($validated);
+            // 5. Simpan semua perubahan gambar sekaligus
+            $product->save();
+
             DB::commit();
             return redirect()->back()
                 ->with('success', 'Product updated successfully');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Error updating product: ' . $e->getMessage());
             return redirect()->back()
-                ->with('error', 'Product not updated');
+                ->with('error', 'Product not updated: ' . $e->getMessage());
         }
     }
 
@@ -147,26 +254,47 @@ class ProductController extends Controller
         return view('landing.product-page', compact('categories', 'products', 'usd_rate'));
     }
 
+    // public function showJson(Product $product)
+    // {
+    //     $product->load('category');
+    //     $imagePaths = $product->getAllImages();
+
+    //     $allImages = collect($imagePaths)->filter()->map(function ($path) {
+
+    //         if (str_starts_with($path, 'data:image')) {
+    //             return $path;
+    //         }
+    //         return asset('storage/' . $path);
+    //     })->unique()->values();
+
+    //     return response()->json([
+    //         'id' => $product->id,
+    //         'name' => $product->name,
+    //         'price' => $product->getFormattedPriceAttribute(),
+    //         'description' => $product->description ?? 'Tidak ada deskripsi untuk produk ini.',
+    //         'category' => $product->category->name ?? 'Uncategorized',
+    //         'images' => $allImages,
+    //     ]);
+    // }
+
     public function showJson(Product $product)
     {
         $product->load('category');
+
+        // Panggil method dari model Anda, ini sudah benar
         $imagePaths = $product->getAllImages();
 
-        $allImages = collect($imagePaths)->filter()->map(function ($path) {
-
-            if (str_starts_with($path, 'data:image')) {
-                return $path;
-            }
-            return asset('storage/' . $path);
-        })->unique()->values();
+        // Karena $imagePaths sekarang adalah array base64, kita tidak perlu
+        // filter 'data:image' atau 'asset()' lagi.
+        $allImages = collect($imagePaths)->filter()->unique()->values();
 
         return response()->json([
             'id' => $product->id,
             'name' => $product->name,
-            'price' => $product->getFormattedPriceAttribute(),
-            'description' => $product->description ?? 'Tidak ada deskripsi untuk produk ini.',
+            'price' => $product->getFormattedPriceAttribute(), // Gunakan accessor
+            'description' => $product->description ?? 'Tidak ada deskripsi.',
             'category' => $product->category->name ?? 'Uncategorized',
-            'images' => $allImages,
+            'images' => $allImages, // Ini sudah array
         ]);
     }
 }

@@ -28,4 +28,9 @@ class CompanyProfileController extends Controller
     {
         return view('landing.contact-us');
     }
+
+    public function partnershipPage()
+    {
+        return view('landing.partnership');
+    }
 }
