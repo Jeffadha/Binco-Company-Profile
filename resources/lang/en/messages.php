@@ -388,4 +388,67 @@ return [
     'sort_price_high' => 'Price: High to Low',
     'apply_filters' => 'Apply Filters',
     'download_catalog' => 'Download Catalog',
+
+    //Kemitraan Page
+    // Partnership Page
+    'partnership_title' => 'Partnership Program',
+    'partnership_subtitle' => 'Collaborate with PT Binco Indofarm to develop sustainable and profitable agribusiness.',
+
+    // Benefits
+    'partnership_benefits_title' => 'Benefits of Partnering With Us',
+    'partnership_benefit_1_title' => 'Competitive Pricing',
+    'partnership_benefit_1_desc' => 'Get special partner pricing with attractive profit margins for our premium products.',
+    'partnership_benefit_2_title' => 'Marketing Support',
+    'partnership_benefit_2_desc' => 'Access to marketing materials, product training, and technical support from our professional team.',
+    'partnership_benefit_3_title' => 'Guaranteed Quality',
+    'partnership_benefit_3_desc' => 'Products with high and consistent quality standards, supported by continuous research and development.',
+    'partnership_benefit_4_title' => 'On-Time Delivery',
+    'partnership_benefit_4_desc' => 'Reliable logistics system to ensure timely product delivery throughout Indonesia.',
+
+    // Partnership Types
+    'partnership_types_title' => 'Partnership Types',
+    'partnership_type_1_title' => 'Distributor',
+    'partnership_type_1_desc' => 'For companies that want to distribute our products on a large scale with wide area coverage.',
+    'partnership_type_2_title' => 'Reseller / Agent',
+    'partnership_type_2_desc' => 'For individuals or SMEs who want to sell our products with a dropship system or limited stock.',
+    'partnership_type_3_title' => 'Greenhouse Collaboration',
+    'partnership_type_3_desc' => 'Cooperation in developing smart plant greenhouses and modern agricultural educational tourism.',
+    'partnership_type_4_title' => 'OEM/Private Label',
+    'partnership_type_4_desc' => 'Customize products with your own brand for special needs with guaranteed quality.',
+
+    // Contact Info
+    'partnership_contact_title' => 'Start Partnership',
+    'partnership_contact_subtitle' => 'Contact us for more information about the partnership program',
+    'partnership_contact_item1' => 'Free consultation with our expert team',
+    'partnership_contact_item2' => 'Detailed partnership proposal',
+    'partnership_contact_item3' => 'Full technical support',
+    'partnership_contact_item4' => 'Continuous training program',
+    'partnership_whatsapp' => 'Contact via WhatsApp',
+    'partnership_email' => 'Contact via Email',
+
+    // Process
+    'partnership_process_title' => 'Partnership Process',
+    'partnership_step_1_title' => 'Initial Consultation',
+    'partnership_step_1_desc' => 'Discuss your needs and partnership potential with our team',
+    'partnership_step_2_title' => 'Business Analysis',
+    'partnership_step_2_desc' => 'We will analyze market potential and prepare a business proposal',
+    'partnership_step_3_title' => 'Agreement Signing',
+    'partnership_step_3_desc' => 'Signing the partnership agreement and initial training',
+    'partnership_step_4_title' => 'Implementation',
+    'partnership_step_4_desc' => 'Launch the partnership with full support from our team',
+
+    // CTA
+    'partnership_cta_title' => 'Ready to Partner With Us?',
+    'partnership_cta_subtitle' => 'Join the PT Binco Indofarm partner network and develop your agribusiness with us',
+    'partnership_cta_button' => 'Start Partnership via WhatsApp',
+    'partnership_cta_contact' => 'Contact Us',
+
+    // Additional partnership terms that might be used
+    'partnership_opportunity' => 'Partnership Opportunity',
+    'partnership_advantages' => 'Partnership Advantages',
+    'partnership_requirements' => 'Partnership Requirements',
+    'partnership_support' => 'Partnership Support',
+    'become_partner' => 'Become a Partner',
+    'partner_with_us' => 'Partner With Us',
+    'join_partnership' => 'Join Our Partnership Program',
 ];

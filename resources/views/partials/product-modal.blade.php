@@ -33,7 +33,7 @@
                 <span id="modalProductPrice"
                     class="my-3 text-3xl font-bold text-emerald-600 dark:text-emerald-400">...</span>
 
-                <p id="modalProductDescription" class="mt-4 text-gray-700 dark:text-gray-300 flex-1 whitespace-pre-line">
+                <p id="modalProductDescription" class="mt-4 text-gray-700 dark:text-gray-300 flex-1 whitespace-pre-line leading-tight">
                     ...
                 </p>
 

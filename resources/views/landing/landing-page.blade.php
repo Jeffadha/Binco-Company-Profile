@@ -93,14 +93,14 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 </span>
             </div>
 
-            <h1 class="text-4xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                <span class="block uppercase">{{ __('messages.hero_title_0') }}</span>
-                <span class="block uppercase">{{ __('messages.hero_title_1') }}</span>
-                <span class="block uppercase">{{ __('messages.hero_title_2') }}</span>
-                <span class="block text-emerald-400 mt-2 uppercase font-extrabold">
-                    {{ __('messages.hero_title_3') }}
-                </span>
-            </h1>
+        <h1 class="text-4xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6">
+            <span class="block uppercase">{{ __('messages.hero_title_0') }}</span>
+            <span class="block uppercase">{{ __('messages.hero_title_1') }}</span>
+            <span class="block uppercase">{{ __('messages.hero_title_2') }}</span>
+            <span class="block text-emerald-400 mt-2 uppercase font-extrabold">
+                {{ __('messages.hero_title_3') }}
+            </span>
+        </h1>
 
             <div class="w-24 h-1 bg-emerald-500 rounded-full mb-6 mx-auto"></div>
 
@@ -589,7 +589,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                         </ul>
                     </div>
                     <div>
-                        <img src="{{ asset('/images/produk_unggulan/cocopeat4.jpg') }}" alt="Cocopeat"
+                        <img src="{{ asset('/images/galeri/media-tanam.jpg') }}" alt="Cocopeat"
                             class="w-full h-auto rounded-2xl shadow-2xl object-cover" style="aspect-ratio: 4/3;">
                     </div>
                 </div>
@@ -979,7 +979,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
-                <img src="{{ asset('/images/galeri/galeri (8).jpg') }}" alt="g2"
+                <img src="{{ asset('/images/produk_unggulan/cocomat1.jpg') }}" alt="g2"
                     class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy">
                 {{-- <div
@@ -993,7 +993,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
-                <img src="{{ asset('/images/galeri/galeri (9).JPG') }}" alt="g3"
+                <img src="{{ asset('/images/greenhouse/melon.jpg') }}" alt="g3"
                     class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy">
                 {{-- <div
@@ -1021,7 +1021,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
-                <img src="{{ asset('/images/galeri/galeri (11).JPG') }}" alt="g1"
+                <img src="{{ asset('/images/greenhouse-inside.jpg') }}" alt="g1"
                     class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy">
                 {{-- <div
@@ -1035,7 +1035,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
-                <img src="{{ asset('/images/galeri/galeri (12).JPG') }}" alt="g2"
+                <img src="{{ asset('/images/galeri/melon-model.jpg') }}" alt="g2"
                     class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy">
                 {{-- <div
@@ -1063,7 +1063,7 @@ $gal4Img = \Illuminate\Support\Facades\File::exists($gal4Path) ? asset('images/g
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
-                <img src="{{ asset('/images/galeri/galeri (14).jpg') }}" alt="g4"
+                <img src="{{ asset('/images/galeri/media-tanam.jpg') }}" alt="g4"
                     class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy">
                 {{-- <div

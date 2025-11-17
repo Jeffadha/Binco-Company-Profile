@@ -386,4 +386,61 @@ return [
     'apply_filters' => 'Terapkan Filter',
     'download_catalog' => 'Download Katalog',
 
+    //Kemitraan PAGE
+    // Tambahkan di bagian bawah file messages.php
+
+    // Partnership Page
+    'partnership_title' => 'Program Kemitraan',
+    'partnership_subtitle' => 'Berkolaborasi bersama PT Binco Indofarm untuk mengembangkan bisnis agribisnis yang berkelanjutan dan menguntungkan.',
+
+    // Benefits
+    'partnership_benefits_title' => 'Keuntungan Bermitra Dengan Kami',
+    'partnership_benefit_1_title' => 'Harga Kompetitif',
+    'partnership_benefit_1_desc' => 'Dapatkan harga khusus mitra dengan margin keuntungan yang menarik untuk produk-produk unggulan kami.',
+    'partnership_benefit_2_title' => 'Dukungan Pemasaran',
+    'partnership_benefit_2_desc' => 'Akses ke materi pemasaran, training produk, dan dukungan teknis dari tim profesional kami.',
+    'partnership_benefit_3_title' => 'Kualitas Terjamin',
+    'partnership_benefit_3_desc' => 'Produk dengan standar kualitas tinggi dan konsisten, didukung oleh penelitian dan pengembangan berkelanjutan.',
+    'partnership_benefit_4_title' => 'Pengiriman Tepat Waktu',
+    'partnership_benefit_4_desc' => 'Sistem logistik yang handal untuk memastikan pengiriman produk tepat waktu ke seluruh Indonesia.',
+
+    // Partnership Types
+    'partnership_types_title' => 'Jenis Kemitraan',
+    'partnership_type_1_title' => 'Distributor',
+    'partnership_type_1_desc' => 'Untuk perusahaan yang ingin mendistribusikan produk kami dalam skala besar dengan area coverage yang luas.',
+    'partnership_type_2_title' => 'Reseller',
+    'partnership_type_2_title' => 'Reseller / Agen',
+    'partnership_type_2_desc' => 'Untuk individu atau UKM yang ingin menjual produk kami dengan sistem dropship atau stok terbatas.',
+    'partnership_type_3_title' => 'Kolaborasi Greenhouse',
+    'partnership_type_3_desc' => 'Kerja sama pengembangan greenhouse smart plant dan wisata edukasi pertanian modern.',
+    'partnership_type_4_title' => 'OEM/Private Label',
+    'partnership_type_4_desc' => 'Kustomisasi produk dengan brand Anda sendiri untuk kebutuhan khusus dengan kualitas terjamin.',
+
+    // Contact Info
+    'partnership_contact_title' => 'Mulai Kemitraan',
+    'partnership_contact_subtitle' => 'Hubungi kami untuk informasi lebih lanjut tentang program kemitraan',
+    'partnership_contact_item1' => 'Konsultasi gratis dengan tim ahli',
+    'partnership_contact_item2' => 'Proposal kemitraan detail',
+    'partnership_contact_item3' => 'Dukungan teknis penuh',
+    'partnership_contact_item4' => 'Program training berkelanjutan',
+    'partnership_whatsapp' => 'WhatsApp Kami',
+    'partnership_email' => 'Email Kami',
+
+    // Process
+    'partnership_process_title' => 'Proses Kemitraan',
+    'partnership_step_1_title' => 'Konsultasi Awal',
+    'partnership_step_1_desc' => 'Diskusikan kebutuhan dan potensi kemitraan dengan tim kami',
+    'partnership_step_2_title' => 'Analisis Bisnis',
+    'partnership_step_2_desc' => 'Kami akan menganalisis potensi pasar dan menyusun proposal bisnis',
+    'partnership_step_3_title' => 'Penandatanganan',
+    'partnership_step_3_desc' => 'Penandatanganan perjanjian kemitraan dan training awal',
+    'partnership_step_4_title' => 'Implementasi',
+    'partnership_step_4_desc' => 'Peluncuran kemitraan dengan dukungan penuh dari tim kami',
+
+    // CTA
+    'partnership_cta_title' => 'Siap Bermitra Dengan Kami?',
+    'partnership_cta_subtitle' => 'Bergabunglah dengan jaringan mitra PT Binco Indofarm dan kembangkan bisnis agribisnis Anda bersama kami',
+    'partnership_cta_button' => 'Mulai Kemitraan via WhatsApp',
+    'partnership_cta_contact' => 'Hubungi Kami',
+
 ];

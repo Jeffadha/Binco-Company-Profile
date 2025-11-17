@@ -5,6 +5,7 @@
     :class="{'dark': darkMode}">
 <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
 
 <script type="text/javascript">
     function googleTranslateElementInit() {
@@ -22,7 +23,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') - {{ config('app.name') }}</title>
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         .bg-whatsapp-teal-green {
@@ -72,11 +75,18 @@
                 padding-top: calc(var(--header-height-mobile) + env(safe-area-inset-top));
             }
         }
+        /* FONT */
+        .font-heading { font-family: 'Source Serif Pro', serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
-<body class="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 flex flex-col">
+<body class=" font-body min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 flex flex-col">
     <!-- Navigation -->
     <header class="bg-white dark:bg-black shadow-sm fixed w-full top-0 z-50 transition-colors duration-300 header-safe"
         x-data="{ mobileMenuOpen: false }" style="height: var(--header-height);">
