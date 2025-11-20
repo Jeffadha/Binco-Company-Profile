@@ -1,35 +1,32 @@
 <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     @forelse ($products as $product)
 
+    {{-- Perhatikan: data-image sekarang isinya URL pendek, bukan string base64 raksasa --}}
     <div class="product-card flex flex-col bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-transform transform hover:scale-105 dark:bg-gray-800 dark:border-gray-700"
-        data-id="{{ $product->id }}" data-name="{{ $product->name }}" data-price="{{ $product->price }}"
-        data-image="{{ $product->getPrimaryImage() }}" data-category="{{ $product->category->name }}">
+        data-id="{{ $product->id }}" 
+        data-name="{{ $product->name }}" 
+        data-price="{{ $product->price }}"
+        data-image="{{ route('product.image', $product->id) }}" 
+        data-category="{{ $product->category->name }}">
 
-        {{-- <div class="aspect-w-1 aspect-h-1">
-            <img src="{{ $product->getPrimaryImage() }}" alt="{{ $product->name }}"
-                class="w-full h-48 sm:h-72 object-cover rounded-t-lg" />
-        </div> --}}
-
+        {{-- Trigger Modal --}}
         <div class="aspect-w-1 aspect-h-1 cursor-pointer js-product-modal-trigger">
-            <img src="{{ $product->getPrimaryImage() }}" alt="{{ $product->name }}"
+            {{-- Gunakan Route, bukan function Base64 langsung --}}
+            <img src="{{ route('product.image', $product->id) }}" 
+                alt="{{ $product->name }}"
+                loading="lazy"
+                decoding="async"
                 class="w-full h-48 sm:h-72 object-cover rounded-t-lg" />
         </div>
 
         <div class="p-4 flex flex-col flex-1">
-
             <div class="flex-1">
-                <h3
-                    class="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2 min-h-[2.5rem] cursor-pointer js-product-modal-trigger">
-                    {{
-                    $product->name }}</h3>
-                {{-- <p class="mt-1 text-sm text-gray-500 dark:text-gray-400 line-clamp-2 min-h-[2.5rem]">{{
-                    $product->description }}</p> --}}
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2 min-h-[2.5rem] cursor-pointer js-product-modal-trigger">
+                    {{ $product->name }}
+                </h3>
             </div>
 
             <div class="mt-auto pt-4 flex items-center justify-between">
-                {{-- <span class="text-emerald-600 font-bold text-lg dark:text-emerald-400">Rp {{
-                    number_format($product->price, 0, ',', '.') }}</span> --}}
-
                 <div>
                     <span class="text-emerald-600 font-bold text-base md:text-lg dark:text-emerald-400 block">
                         Rp {{ number_format($product->price, 0, ',', '.') }}
@@ -42,10 +39,7 @@
                     @endif
                 </div>
 
-                <button
-                    class="add-to-cart-btn bg-emerald-500 text-white p-2 rounded-lg hover:bg-emerald-600 transition-colors sm:px-4 sm:py-2">
-
-                    <!-- Mobile: Ikon Saja -->
+                <button class="add-to-cart-btn bg-emerald-500 text-white p-2 rounded-lg hover:bg-emerald-600 transition-colors sm:px-4 sm:py-2">
                     <span class="sm:hidden">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +49,6 @@
                         </svg>
                     </span>
 
-                    <!-- Desktop: Teks Saja -->
                     <span class="hidden sm:inline">
                         Add to Cart
                     </span>
@@ -64,7 +57,6 @@
         </div>
     </div>
     @empty
-    <!-- No Results -->
     <div id="noResults" class="col-span-full text-center py-12">
         <h3 class="text-lg font-medium text-gray-900 dark:text-gray-200">No products found</h3>
         <p class="mt-2 text-gray-500 dark:text-gray-400">Try adjusting your search terms or filters.</p>
@@ -82,5 +74,4 @@
 @endif
 
 @include('partials.product-modal')
-
 @include('partials.product-modal-script')

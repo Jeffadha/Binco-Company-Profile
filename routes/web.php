@@ -37,6 +37,7 @@ Route::get('/contact', [CompanyProfileController::class, "contactPage"])->name('
 Route::get('/product', [ProductController::class, "productPage"])->name('product');
 Route::get('/partnership', [CompanyProfileController::class, "partnershipPage"])->name('partnership');
 
+Route::get('/product-image/{id}', [ProductController::class, 'serveImage'])->name('product.image');
 
 //Auth Routes
 Route::get('/auth/login', [AuthController::class, "showLoginForm"])->name('login');

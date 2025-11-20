@@ -297,4 +297,35 @@ class ProductController extends Controller
             'images' => $allImages, // Ini sudah array
         ]);
     }
+    public function serveImage($id)
+    {
+        $product = \App\Models\Product::findOrFail($id);
+        
+        // Ambil string Base64 dari accessor/kolom database Anda
+        $base64_image = $product->getPrimaryImage(); 
+
+        // Cek apakah string kosong
+        if (empty($base64_image)) {
+            abort(404);
+        }
+
+        // Bersihkan prefix data URI (misal: "data:image/png;base64,") jika ada
+        if (preg_match('/^data:image\/(\w+);base64,/', $base64_image, $type)) {
+            $base64_image = substr($base64_image, strpos($base64_image, ',') + 1);
+            $type = strtolower($type[1]); // jpg, png, gif
+            
+            if (!in_array($type, ['jpg', 'jpeg', 'gif', 'png'])) {
+                $type = 'jpeg'; // default fallback
+            }
+        } else {
+            $type = 'jpeg'; // default jika tidak ada header
+        }
+
+        $image_content = base64_decode($base64_image);
+
+        // Kembalikan sebagai response gambar, bukan teks HTML
+        return response($image_content)
+            ->header('Content-Type', 'image/' . $type)
+            ->header('Cache-Control', 'max-age=86400, public'); // Cache 1 hari biar ngebut
+    }
 }
