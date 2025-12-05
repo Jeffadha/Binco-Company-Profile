@@ -7,12 +7,10 @@
 
 @section('content')
     <div class="container-fluid">
-        <!-- Header Section -->
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1 class="h3">Order History</h1>
         </div>
 
-        <!-- Order Table -->
         <div class="card shadow">
             <div class="card-body">
                 <div class="table-responsive">
@@ -61,15 +59,18 @@
                             @foreach ($orders as $order)
                                 <tr>
                                     <td>{{ $order->order_code }}</td>
-                                    <td>{{ $order->user->name ?? 'N/A' }}</td>
+                                    {{-- FIX 1: Tambahkan '?' pada user --}}
+                                    <td>{{ $order->user?->name ?? 'User Terhapus' }}</td>
                                     <td>Rp {{ number_format($order->total_amount, 0, ',', '.') }}</td>
                                     <td>
-                                        <span class="badge bg-{{ $order->status_color }}">
+                                        {{-- Pastikan Accessor status_color ada di Model, jika tidak gunakan default --}}
+                                        <span class="badge bg-{{ $order->status_color ?? 'secondary' }}">
                                             {{ ucfirst($order->status) }}
                                         </span>
                                     </td>
                                     <td>{{ $order->midtrans_payment_type }}</td>
-                                    <td>{{ $order->created_at->format('d M Y') }}</td>
+                                    {{-- FIX 2: Gunakan optional() untuk tanggal --}}
+                                    <td>{{ optional($order->created_at)->format('d M Y') ?? '-' }}</td>
                                     <td>
                                         <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
                                             data-bs-target="#orderDetailModal{{ $order->id }}">
@@ -97,7 +98,7 @@
                             Showing {{ $orders->firstItem() }} to {{ $orders->lastItem() }} of {{ $orders->total() }}
                         </div>
                         <div>
-                           {{ $orders->links('pagination::bootstrap-5') }}
+                            {{ $orders->links('pagination::bootstrap-5') }}
                         </div>
                     </div>
                 </div>
@@ -127,14 +128,14 @@
                                                 <div>
                                                     <p class="text-muted mb-1">Order Status</p>
                                                     <h4 class="mb-0">
-                                                        <span class="badge bg-{{ $order->status_color }}">
+                                                        <span class="badge bg-{{ $order->status_color ?? 'secondary' }}">
                                                             {{ ucfirst($order->status) }}
                                                         </span>
                                                     </h4>
                                                 </div>
                                                 <div class="text-end">
                                                     <p class="text-muted mb-1">Order Date</p>
-                                                    <h6 class="mb-0">{{ $order->created_at->format('d M Y') }}</h6>
+                                                    <h6 class="mb-0">{{ optional($order->created_at)->format('d M Y') }}</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -150,15 +151,18 @@
                                             </h6>
                                             <div class="mb-2">
                                                 <label class="text-muted small">Name</label>
-                                                <p class="mb-0">{{ $order->user->name ?? 'N/A' }}</p>
+                                                {{-- FIX 3: Perbaikan Null Safe User --}}
+                                                <p class="mb-0">{{ $order->user?->name ?? 'User Terhapus' }}</p>
                                             </div>
                                             <div class="mb-2">
                                                 <label class="text-muted small">Email</label>
-                                                <p class="mb-0">{{ $order->user->email ?? 'N/A' }}</p>
+                                                {{-- FIX 4: Perbaikan Null Safe Email --}}
+                                                <p class="mb-0">{{ $order->user?->email ?? 'N/A' }}</p>
                                             </div>
                                             <div class="mb-0">
                                                 <label class="text-muted small">Phone</label>
-                                                <p class="mb-0">{{ $order->user->phone ?? 'N/A' }}</p>
+                                                {{-- FIX 5: Perbaikan Null Safe Phone --}}
+                                                <p class="mb-0">{{ $order->user?->phone ?? 'N/A' }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -203,7 +207,8 @@
                                                     <div class="col-md-4">
                                                         <label class="text-muted small">Payment Type</label>
                                                         <p class="mb-1 fw-medium">
-                                                            {{ ucwords(str_replace('_', ' ', $order->midtrans_payment_type)) }}
+                                                            {{-- FIX 6: Pastikan tidak error jika null --}}
+                                                            {{ ucwords(str_replace('_', ' ', $order->midtrans_payment_type ?? '')) }}
                                                         </p>
                                                     </div>
                                                 @endif
@@ -234,20 +239,40 @@
                                                             <tr>
                                                                 <td>
                                                                     <div class="d-flex gap-3">
-                                                                        <img src="{{ $item->product->image ?? asset('assets/images/default.png') }}"
-                                                                            alt="{{ $item->product->name }}"
-                                                                            class="rounded" width="40"
-                                                                            height="40">
+                                                                            @php
+                                                                                $img = $item->product?->image;
+                                                                            
+                                                                                // Jika bentuknya array → ambil index pertama
+                                                                                if (is_array($img)) {
+                                                                                    $img = $img[0] ?? null;
+                                                                                }
+                                                                            
+                                                                                // Jika JSON → decode dulu
+                                                                                if (is_string($img) && str_starts_with($img, '[')) {
+                                                                                    $decoded = json_decode($img, true);
+                                                                                    if (is_array($decoded)) {
+                                                                                        $img = $decoded[0] ?? null;
+                                                                                    }
+                                                                                }
+                                                                            
+                                                                                $img = $img ? $img : asset('assets/images/default.png');
+                                                                            @endphp
+                                                                            
+                                                                            <img src="{{ $img }}"
+                                                                                 alt="{{ $item->product?->name ?? 'Produk Dihapus' }}"
+                                                                                 class="rounded" width="40" height="40" style="object-fit: cover;">
+
                                                                         <p class="mb-0 fw-medium">
-                                                                            {{ $item->product->name }}
+                                                                            {{-- FIX 8: Null Safe Product Name --}}
+                                                                            {{ $item->product?->name ?? 'Produk Dihapus' }}
                                                                         </p>
                                                                     </div>
                                                                 </td>
-                                                                <td>Rp {{ number_format($item->unit_price, 0, ',', '.') }}
+                                                                <td>Rp {{ number_format($item->price, 0, ',', '.') }}
                                                                 </td>
                                                                 <td>{{ $item->quantity }}</td>
                                                                 <td>Rp
-                                                                    {{ number_format($item->unit_price * $item->quantity, 0, ',', '.') }}
+                                                                    {{ number_format($item->price * $item->quantity, 0, ',', '.') }}
                                                                 </td>
                                                             </tr>
                                                         @endforeach
