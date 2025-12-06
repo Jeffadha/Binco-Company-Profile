@@ -64,8 +64,8 @@ Route::middleware('isAdmin')->group(function () {
     Route::delete('/admin/products/{product}', [ProductController::class, "destroy"])->name('admin.products.destroy');
     Route::post('/admin/products', [ProductController::class, "store"])->name('admin.products.store');
     Route::put('/admin/products/{product}', [ProductController::class, "update"])->name('admin.products.update');
-
-    //users managament
+    //Edit product
+    Route::get('/admin/products/{id}/edit-form', [ProductController::class, 'getEditForm']) ->name('admin.products.edit-form');
     Route::prefix('users')->group(function () {
         Route::get('/', [UserController::class, "index"])->name('admin.users.index');
         Route::post('/', [UserController::class, "store"])->name('admin.users.store');
